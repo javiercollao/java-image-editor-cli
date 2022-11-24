@@ -20,6 +20,10 @@ public class Pixbit extends Pixel{
         return bit;
     }
 
+    public void setBit(int bit) {
+        this.bit = bit;
+    }
+
     
     @Override
     boolean isBit() {
@@ -38,7 +42,21 @@ public class Pixbit extends Pixel{
     
     @Override
     void invertColor() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(this.getBit() == 0){
+            this.setBit(1);
+        }else{
+            this.setBit(0);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Bit { "+
+               "x = "+ this.getPosX() +
+               ", y = "+ this.getPosY() +
+               ", bit = "+ this.getBit() +
+               ", depth = "+ this.getDepth() +
+               " }";
     }
 
 }

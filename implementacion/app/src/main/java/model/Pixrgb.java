@@ -46,9 +46,9 @@ public class Pixrgb extends Pixel{
 
     @Override
     void invertColor() {
-        this.r = 255 - this.r;
-        this.g = 255 - this.g;
-        this.b = 255 - this.b;
+        this.setR(255 - this.getR());
+        this.setG(255 - this.getG());
+        this.setB(255 - this.getB());
     }
 
     @Override
@@ -64,6 +64,18 @@ public class Pixrgb extends Pixel{
     @Override
     boolean isHex() {
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return "RGB {"+
+               "x = "+ this.getPosX() +
+               "y = "+ this.getPosY() +
+               "r = "+ this.getR() +
+               "g = "+ this.getG() +
+               "b = "+ this.getB() +
+               "depth = "+ this.getDepth() +
+               "}";
     }
     
 }

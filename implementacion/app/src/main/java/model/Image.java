@@ -161,8 +161,19 @@ public class Image implements IImage {
     }
 
     @Override
-    public String toString() {
-        this.pixels.forEach(Pixel::toString);
+    public String toString() { 
+        List<String> lista = new ArrayList<>();
+        StringBuilder sb;
+        sb = new StringBuilder();
+
+        this.pixels.forEach(pixel -> {
+           lista.add(pixel.toString());
+        });
+        
+        lista.forEach(sb::append);
+        String concatString = sb.toString();
+        
+        return concatString;
     }
 
     @Override

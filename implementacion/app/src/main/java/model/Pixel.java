@@ -49,4 +49,7 @@ public abstract class Pixel {
     
     abstract void invertColor();
     
+    @Override
+    public abstract String toString();
+    
 }

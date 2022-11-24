@@ -55,7 +55,7 @@ public class App {
         // isCompressed   
         // flipH
         
-        System.out.print(imagen1);
+        System.out.print(imagen1.toString());
         
         
         

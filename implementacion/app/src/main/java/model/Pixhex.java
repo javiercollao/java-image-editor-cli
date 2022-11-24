@@ -44,5 +44,15 @@ public class Pixhex extends Pixel{
     boolean isHex() {
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Hex {"+
+               "x = "+ this.getPosX() +
+               "y = "+ this.getPosY() +
+               "hex = "+ this.getHex() +
+               "depth = "+ this.getDepth() +
+               "}";
+    }
     
 }

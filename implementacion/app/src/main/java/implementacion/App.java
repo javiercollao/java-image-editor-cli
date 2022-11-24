@@ -37,6 +37,10 @@ public class App {
         Pixel p11 = new Pixhex(1,0,"FF5332",5);
         Pixel p12 = new Pixhex(1,1,"F452AB",5);
         
+        Pixel p13 = new Pixhex(1,1,"F452AB",145);
+        Pixel p14 = new Pixrgb(1,1,142,142,145,145);
+        Pixel p15 = new Pixbit(1,1,1,145);
+        
         List<Pixel> pixelsBit = Arrays.asList(p1,p2,p3,p4);
         List<Pixel> pixelsPix = Arrays.asList(p5,p6,p7,p8);
         List<Pixel> pixelsHex = Arrays.asList(p9,p10,p11,p12);
@@ -78,11 +82,14 @@ public class App {
         
         // histogram      
         // rotate90  
-        imagen1.rotate90();
-        System.out.print(imagen1.toString());
+        // imagen1.rotate90();
+        // System.out.print(imagen1.toString());
         
         // compress       
-        // edit           
+        // changePixel
+        
+        imagen2.changePixel(p14);
+        System.out.print(imagen2.toString());
         // invertColorBit 
         // invertColorRGB 
         // adjustChannel  

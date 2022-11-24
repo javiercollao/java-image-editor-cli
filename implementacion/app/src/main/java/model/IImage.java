@@ -23,7 +23,7 @@ public interface IImage {
     public void edit();
     public void invertColorBit();
     public void invertColorRGB();
-    public void adjustChannel();
+    public void changePixel(Pixel p);
     public String toString();
     public void depthLayers();
     public void decompress();

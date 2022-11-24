@@ -191,17 +191,29 @@ public class Image implements IImage {
 
     @Override
     public void invertColorBit() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.pixels.forEach(pixel -> { 
+            pixel.invertColor();
+        }); 
     }
 
     @Override
     public void invertColorRGB() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.pixels.forEach(pixel -> { 
+            pixel.invertColor();
+        }); 
     }
 
     @Override
-    public void adjustChannel() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void changePixel(Pixel p) {
+        List<Pixel> lista = new ArrayList<>();
+        this.pixels.forEach(pixel -> { 
+            if(pixel.getPosX() == p.getPosX() && pixel.getPosY() == p.getPosY()){
+                lista.add(p);
+            }else{
+                lista.add(pixel);
+            }
+        }); 
+        this.setPixels(lista);   
     }
 
     @Override

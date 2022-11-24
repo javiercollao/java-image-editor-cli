@@ -111,5 +111,7 @@ public class Pixrgb extends Pixel{
                ", depth = "+ this.getDepth() +
                " }";
     }
+
+     
     
 }

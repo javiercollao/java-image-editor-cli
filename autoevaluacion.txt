@@ -38,8 +38,9 @@ rotate90                   1
 compress                   0
 changePixel                0
 invertColorBit             1
-invertColorRGB             1
-adjustChannel              0
+invertColorRGB             1 
 toString                   1
 depthLayers                0
 decompress                 0
+Menu terminal              0
+* Ui                       0

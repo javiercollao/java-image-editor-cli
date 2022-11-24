@@ -34,11 +34,11 @@ flipV                      1
 crop                       1
 imgRGBToHex                1
 histogram                  0
-rotate90                   0
+rotate90                   1
 compress                   0
-edit                       0
-invertColorBit             0
-invertColorRGB             0
+changePixel                0
+invertColorBit             1
+invertColorRGB             1
 adjustChannel              0
 toString                   1
 depthLayers                0

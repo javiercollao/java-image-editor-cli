@@ -145,8 +145,8 @@ public class Image implements IImage {
         });
         lista.removeIf(pixel -> (pixel == null));
         this.setPixels(lista);
-        
-        // modificar W y H
+        this.setWidth((x2-x1)+1);
+        this.setHeight(this.height-((this.height-1)-y2));
     }
 
     @Override

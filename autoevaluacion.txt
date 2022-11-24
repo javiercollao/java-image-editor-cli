@@ -23,21 +23,23 @@ Requerimientos No funcionales
 
 Requerimientos funcionales	    
 
-TDAs                               1
-image                              1
-imageIsBitmap                      1
-imageIsPixmap                      1
-imageIsHexmap                      1
-imageIsCompressed                  1
-imageFlipH                         1
-imageFlipV                         1
-imageCrop                          1
-imageRGBToHex                      1
-imageToHistogram                   1
-imageRotate90                      1
-imageCompress                      1
-imageChangePixel                   1
-imageInvertColorRGB                1
-imageToString                      1
-imageDepthLayers                   1
-imageDecompress                    1
+TDAs                       1
+Image constructor          1
+isBitmap                   0
+isPixmap                   0
+isHexmap                   0
+isCompressed               0
+flipH                      0
+flipV                      0
+crop                       0
+imgRGBToHex                0
+histogram                  0
+rotate90                   0
+compress                   0
+edit                       0
+invertColorBit             0
+invertColorRGB             0
+adjustChannel              0
+imageToString              0
+depthLayers                0
+decompress                 0

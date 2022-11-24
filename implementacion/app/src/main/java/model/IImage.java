@@ -24,7 +24,7 @@ public interface IImage {
     public void invertColorBit();
     public void invertColorRGB();
     public void adjustChannel();
-    public void imageToString();
+    public String toString();
     public void depthLayers();
     public void decompress();
 }

@@ -4,6 +4,9 @@
  */
 package model;
 
+import java.util.ArrayList; 
+import java.util.List;
+
 /**
  *
  * @author Javier Collao
@@ -11,20 +14,90 @@ package model;
 public class Image implements IImage {
     public int width;
     public int height;
+    public List<Pixel> pixels;
 
+    public Image(int width, int height, List<Pixel> pixels) {
+        this.width = width;
+        this.height = height;
+        this.pixels = pixels;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public List<Pixel> getPixels() {
+        return pixels;
+    }
+
+    public void setPixels(List<Pixel> pixels) {
+        this.pixels = pixels;
+    }
+    
     @Override
     public boolean isBitmap() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        boolean result;
+        List<Boolean> lista = new ArrayList<>();
+        
+        this.pixels.forEach(element -> {
+            lista.add(element.isBit());
+        });
+        
+        if(lista.contains(false)){
+            result = false;
+        }else{
+            result = true;
+        }
+        
+        return result;
     }
 
     @Override
     public boolean isPixmap() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        boolean result;
+        List<Boolean> lista = new ArrayList<>();
+        
+        this.pixels.forEach(element -> {
+            lista.add(element.isPix());
+        });
+        
+        if(lista.contains(false)){
+            result = false;
+        }else{
+            result = true;
+        }
+        
+        return result;
     }
 
     @Override
     public boolean isHexmap() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        boolean result;
+        List<Boolean> lista = new ArrayList<>();
+        
+        this.pixels.forEach(element -> {
+            lista.add(element.isHex());
+        });
+        
+        if(lista.contains(false)){
+            result = false;
+        }else{
+            result = true;
+        }
+        
+        return result;
     }
 
     @Override
@@ -88,8 +161,8 @@ public class Image implements IImage {
     }
 
     @Override
-    public void imageToString() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String toString() {
+        this.pixels.forEach(Pixel::toString);
     }
 
     @Override

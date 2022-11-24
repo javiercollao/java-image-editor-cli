@@ -25,9 +25,9 @@ Requerimientos funcionales
 
 TDAs                       1
 Image constructor          1
-isBitmap                   0
-isPixmap                   0
-isHexmap                   0
+isBitmap                   1
+isPixmap                   1
+isHexmap                   1
 isCompressed               0
 flipH                      0
 flipV                      0
@@ -40,6 +40,6 @@ edit                       0
 invertColorBit             0
 invertColorRGB             0
 adjustChannel              0
-imageToString              0
+toString                   1
 depthLayers                0
 decompress                 0

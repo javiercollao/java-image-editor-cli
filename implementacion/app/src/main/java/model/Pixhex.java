@@ -47,12 +47,12 @@ public class Pixhex extends Pixel{
 
     @Override
     public String toString() {
-        return "Hex {"+
+        return "Hex { "+
                "x = "+ this.getPosX() +
-               "y = "+ this.getPosY() +
-               "hex = "+ this.getHex() +
-               "depth = "+ this.getDepth() +
-               "}";
+               ", y = "+ this.getPosY() +
+               ", hex = "+ this.getHex() +
+               ", depth = "+ this.getDepth() +
+               " }";
     }
     
 }

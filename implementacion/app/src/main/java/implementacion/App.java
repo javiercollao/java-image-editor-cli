@@ -73,11 +73,14 @@ public class App {
         
         
         // imgRGBToHex 
-        imagen2.imgRGBToHex();
-        System.out.print(imagen2.toString());
+        //imagen2.imgRGBToHex();
+        //System.out.print(imagen2.toString());
         
         // histogram      
-        // rotate90       
+        // rotate90  
+        imagen1.rotate90();
+        System.out.print(imagen1.toString());
+        
         // compress       
         // edit           
         // invertColorBit 

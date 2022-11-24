@@ -145,6 +145,8 @@ public class Image implements IImage {
         });
         lista.removeIf(pixel -> (pixel == null));
         this.setPixels(lista);
+        
+        // modificar W y H
     }
 
     @Override
@@ -157,7 +159,7 @@ public class Image implements IImage {
             });
             this.setPixels(lista);
         }else{
-            this.setPixels(lista);
+            this.setPixels(this.pixels);
         }
     }
 
@@ -167,8 +169,14 @@ public class Image implements IImage {
     }
 
     @Override
-    public void rotate90() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void rotate90() { 
+        this.pixels.forEach(pixel -> {
+            int newPosX = pixel.getPosY();
+            int newPosY = pixel.getPosX();
+            pixel.setPosX(newPosX);
+            pixel.setPosY(newPosY);
+        });  
+        this.flipH();
     }
 
     @Override

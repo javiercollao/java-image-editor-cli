@@ -49,6 +49,9 @@ public abstract class Pixel {
     
     abstract void invertColor();
     
+    abstract String rgbToHex();
+    
+    
     @Override
     public abstract String toString();
     

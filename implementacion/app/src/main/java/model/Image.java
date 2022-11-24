@@ -149,7 +149,16 @@ public class Image implements IImage {
 
     @Override
     public void imgRGBToHex() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        List<Pixel> lista = new ArrayList<>();
+        if(this.isPixmap()){
+            this.pixels.forEach(pixel -> {
+                Pixel p = new Pixhex(pixel.getPosX(),pixel.getPosY(), pixel.rgbToHex(), pixel.getDepth());
+                lista.add(p);
+            });
+            this.setPixels(lista);
+        }else{
+            this.setPixels(lista);
+        }
     }
 
     @Override

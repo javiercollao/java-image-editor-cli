@@ -31,8 +31,8 @@ isHexmap                   1
 isCompressed               0
 flipH                      1
 flipV                      1
-crop                       0
-imgRGBToHex                0
+crop                       1
+imgRGBToHex                1
 histogram                  0
 rotate90                   0
 compress                   0

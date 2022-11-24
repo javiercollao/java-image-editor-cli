@@ -45,6 +45,7 @@ public class Pixhex extends Pixel{
         return true;
     }
 
+    
     @Override
     public String toString() {
         return "Hex { "+
@@ -53,6 +54,11 @@ public class Pixhex extends Pixel{
                ", hex = "+ this.getHex() +
                ", depth = "+ this.getDepth() +
                " }";
+    }
+
+    @Override
+    String rgbToHex() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

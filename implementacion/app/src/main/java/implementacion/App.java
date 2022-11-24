@@ -72,7 +72,10 @@ public class App {
         // System.out.print(imagen1.toString());
         
         
-        // imgRGBToHex    
+        // imgRGBToHex 
+        imagen2.imgRGBToHex();
+        System.out.print(imagen2.toString());
+        
         // histogram      
         // rotate90       
         // compress       

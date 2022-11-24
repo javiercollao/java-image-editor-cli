@@ -121,7 +121,16 @@ public class Image implements IImage {
 
     @Override
     public void flipV() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int height = this.getHeight()-1;
+        this.pixels.forEach(pixel -> {
+            if(pixel.getPosY() == height){
+                pixel.setPosY(0);
+            }else if(pixel.getPosY() == 0){
+                pixel.setPosY(height);
+            }else{
+                pixel.setPosY(height-pixel.getPosY());
+            }
+        }); 
     }
 
     @Override

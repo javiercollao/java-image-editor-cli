@@ -59,7 +59,12 @@ public class App {
 
         
         
-        // flipV          
+        // flipV    
+        
+        imagen2.flipV();
+        System.out.print(imagen2.toString());
+        
+        
         // crop           
         // imgRGBToHex    
         // histogram      

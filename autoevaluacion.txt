@@ -29,8 +29,8 @@ isBitmap                   1
 isPixmap                   1
 isHexmap                   1
 isCompressed               0
-flipH                      0
-flipV                      0
+flipH                      1
+flipV                      1
 crop                       0
 imgRGBToHex                0
 histogram                  0

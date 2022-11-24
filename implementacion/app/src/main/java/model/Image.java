@@ -135,7 +135,16 @@ public class Image implements IImage {
 
     @Override
     public void crop(int x1, int y1, int x2, int y2) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        List<Pixel> lista = new ArrayList<>();
+        this.pixels.forEach(pixel -> {
+            if(pixel.getPosX() >= x1 && pixel.getPosX() <= x2 && pixel.getPosY()<= y1){
+                lista.add(pixel);
+            }else{
+                lista.add(null);
+            }
+        });
+        lista.removeIf(pixel -> (pixel == null));
+        this.setPixels(lista);
     }
 
     @Override

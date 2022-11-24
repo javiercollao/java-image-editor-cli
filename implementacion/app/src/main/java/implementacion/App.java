@@ -53,19 +53,25 @@ public class App {
         // System.out.print(imagen3.isHexmap());
              
         // isCompressed   
+        
+        
+        
         // flipH 
-        //imagen2.flipH();
-        //System.out.print(imagen2.toString());
+        // imagen2.flipH();
+        // System.out.print(imagen2.toString());
 
         
         
         // flipV    
+        // imagen2.flipV();
+        // System.out.print(imagen2.toString());
         
-        imagen2.flipV();
-        System.out.print(imagen2.toString());
+        
+        // crop
+        // imagen1.crop(1, 1, 1, 1); 
+        // System.out.print(imagen1.toString());
         
         
-        // crop           
         // imgRGBToHex    
         // histogram      
         // rotate90       

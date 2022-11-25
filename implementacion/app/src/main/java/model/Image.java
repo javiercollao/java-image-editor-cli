@@ -6,6 +6,7 @@ package model;
 
 import java.util.ArrayList; 
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
  *
@@ -165,7 +166,23 @@ public class Image implements IImage {
 
     @Override
     public void histogram() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.pixels.forEach(pixel -> {
+            if(this.isBitmap()){
+               ((Pixbit)pixel).getBit();
+            }else if(this.isPixmap()){
+                List<Int> color = new ArrayList<>();
+                int r = ((Pixrgb)pixel).getR();
+                int g = ((Pixrgb)pixel).getG(); 
+                int b = ((Pixrgb)pixel).getB(); 
+                color.add(r);
+                color.add(g);
+                color.add(b);
+            }else{
+                ((Pixhex)pixel).getHex();
+            }
+           
+             
+        }); 
     }
 
     @Override
@@ -184,11 +201,7 @@ public class Image implements IImage {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
-    public void edit() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+     
     @Override
     public void invertColorBit() {
         this.pixels.forEach(pixel -> { 

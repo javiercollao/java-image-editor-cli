@@ -85,14 +85,19 @@ public class App {
         // imagen1.rotate90();
         // System.out.print(imagen1.toString());
         
-        // compress       
-        // changePixel
+        // compress  
         
-        imagen2.changePixel(p14);
-        System.out.print(imagen2.toString());
-        // invertColorBit 
+        // changePixel
+        //imagen2.changePixel(p14);
+        //System.out.print(imagen2.toString());
+        
+        // invertColorBit
+        //imagen1.invertColorBit();
+        //System.out.print(imagen1.toString());
+        
         // invertColorRGB 
-        // adjustChannel  
+        //imagen2.invertColorRGB();
+        //System.out.print(imagen2.toString());
         
         // toString
         // System.out.print(imagen1.toString());
@@ -100,7 +105,10 @@ public class App {
         // System.out.print(imagen3.toString());
         
         
-        // depthLayers    
+        // depthLayers  
+        
+        
+        
         // decompress     
         
        

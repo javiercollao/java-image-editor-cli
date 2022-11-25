@@ -52,6 +52,7 @@ public abstract class Pixel {
     abstract String rgbToHex();
     
     
+    
     @Override
     public abstract String toString();
     

@@ -51,21 +51,19 @@ public class App {
         Image imagen2 =  new Image(2,2,pixelsPix);
         Image imagen3 =  new Image(2,2,pixelsHex);
 
-        // isBitmap, isPixmap, isHexmap 
+        // isBitmap, isPixmap, isHexmap
         // System.out.print(imagen1.isBitmap());
         // System.out.print(imagen2.isPixmap());
         // System.out.print(imagen3.isHexmap());
              
-        // isCompressed   
+        // isCompressed
         
-        
-        
+         
         // flipH 
         // imagen2.flipH();
         // System.out.print(imagen2.toString());
 
-        
-        
+         
         // flipV    
         // imagen2.flipV();
         // System.out.print(imagen2.toString());
@@ -79,6 +77,7 @@ public class App {
         // imgRGBToHex 
         //imagen2.imgRGBToHex();
         //System.out.print(imagen2.toString());
+        
         
         // histogram      
         // rotate90  

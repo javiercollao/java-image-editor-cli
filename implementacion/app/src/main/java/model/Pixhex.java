@@ -42,6 +42,7 @@ public class Pixhex extends Pixel{
 
     @Override
     boolean isHex() {
+        // 6 char?
         return true;
     }
 

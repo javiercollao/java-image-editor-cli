@@ -4,6 +4,9 @@
  */
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Javier Collao
@@ -100,6 +103,17 @@ public class Pixrgb extends Pixel{
         return this.toHex(this.r)+this.toHex(this.g)+this.toHex(this.b);
     }
 
+    public List<Integer> getRGB(){
+        List<Integer> color = new ArrayList<>();
+                int r = this.r;
+                int g = this.g; 
+                int b = this.b; 
+                color.add(r);
+                color.add(g);
+                color.add(b);
+        return color;
+    }
+    
     @Override
     public String toString() {
         return "RGB { "+

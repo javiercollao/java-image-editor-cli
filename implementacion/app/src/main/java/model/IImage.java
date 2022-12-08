@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.List;
+
 /**
  *
  * @author Javier Collao
@@ -17,7 +19,7 @@ public interface IImage {
     public void flipV();
     public void crop(int x1, int y1, int x2, int y2);
     public void imgRGBToHex();
-    public void histogram();
+    public Histogram histogram();
     public void rotate90();
     public void compress(); 
     public void invertColorBit();

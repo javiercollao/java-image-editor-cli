@@ -6,7 +6,6 @@ package model;
 
 import java.util.ArrayList; 
 import java.util.List;
-import java.util.function.Consumer;
 
 /**
  *
@@ -165,24 +164,126 @@ public class Image implements IImage {
     }
 
     @Override
-    public void histogram() {
-        this.pixels.forEach(pixel -> {
-            if(this.isBitmap()){
-               ((Pixbit)pixel).getBit();
-            }else if(this.isPixmap()){
-                List<Int> color = new ArrayList<>();
-                int r = ((Pixrgb)pixel).getR();
-                int g = ((Pixrgb)pixel).getG(); 
-                int b = ((Pixrgb)pixel).getB(); 
-                color.add(r);
-                color.add(g);
-                color.add(b);
-            }else{
-                ((Pixhex)pixel).getHex();
+    public Histogram histogram() { 
+        List<HistogramColor> listaFrencuenciaColores = null;
+        if(this.isBitmap()){  
+            List<Integer> colors = new ArrayList<>();
+            this.pixels.forEach(pixel -> {
+                int bit = ((Pixbit)pixel).getBit();
+                colors.add(bit);
+            });
+            listaFrencuenciaColores = filterBit(colors);
+        }else if(this.isPixmap()){
+            List<List<Integer>> colors;
+            colors = new ArrayList<>();
+            this.pixels.forEach(pixel -> {
+                List<Integer> color = ((Pixrgb)pixel).getRGB();
+                colors.add(color);
+            }); 
+            listaFrencuenciaColores = filterRgb(colors);
+                
+        }else{
+            List<String> colors;
+            colors = new ArrayList<>();
+            this.pixels.forEach(pixel -> {
+                String hex = ((Pixhex)pixel).getHex();
+                colors.add(hex);
+            }); 
+            listaFrencuenciaColores = filterHex(colors);
+        }
+        
+        Histogram histo;
+        histo = new Histogram(listaFrencuenciaColores);
+        return histo;
+        
+    }
+    
+    public List<HistogramColor> filterBit(List<Integer> lista){
+        List<HistogramColor> histo = new ArrayList<>();
+ 
+        for (int i = 0; i < lista.size(); i++){
+            int flag = 0;
+            int count = 0;
+
+            for (int j = i+1; j < lista.size(); j++){
+                if (lista.get(i).equals(lista.get(j))){
+                    flag = 1;
+                    break;
+                }
             }
-           
-             
-        }); 
+ 
+            if (flag == 1)
+                continue;
+
+            for (int j = 0;j<=i;j++){
+                if (lista.get(i).equals(lista.get(j)))
+                    count++;
+            }
+            HistogramColorBit colorBit;
+            colorBit = new HistogramColorBit(lista.get(i),count); 
+            histo.add(colorBit);
+        }
+       
+        return histo;
+    }
+    
+    public List<HistogramColor> filterRgb(List<List<Integer>> lista){
+        List<HistogramColor> histo = new ArrayList<>();
+ 
+        for (int i = 0; i < lista.size(); i++){
+            int flag = 0;
+            int count = 0;
+
+            for (int j = i+1; j < lista.size(); j++){
+                if (lista.get(i).equals(lista.get(j))){
+                    flag = 1;
+                    break;
+                }
+            }
+ 
+            if (flag == 1)
+                continue;
+
+            for (int j = 0;j<=i;j++){
+                if (lista.get(i).equals(lista.get(j)))
+                    count++;
+            }
+            HistogramColorRgb colorRgb;
+            colorRgb = new HistogramColorRgb(lista.get(i),count); 
+            histo.add(colorRgb);
+        }
+       
+        return histo;
+    }
+    
+    
+    public List<HistogramColor> filterHex(List<String> lista){
+        List<HistogramColor> histo = new ArrayList<>();
+ 
+        for (int i = 0; i < lista.size(); i++){
+            int flag = 0;
+            int count = 0;
+
+            for (int j = i+1; j < lista.size(); j++){
+                if (lista.get(i).equals(lista.get(j))){
+                    flag = 1;
+                    break;
+                }
+            }
+ 
+            if (flag == 1)
+                continue;
+
+            for (int j = 0;j<=i;j++){
+                if (lista.get(i).equals(lista.get(j)))
+                    count++;
+            }
+            HistogramColorHex colorHex;
+            colorHex = new HistogramColorHex(lista.get(i),count); 
+            histo.add(colorHex);
+        }
+       
+        return histo;
     }
 
     @Override
@@ -201,7 +302,7 @@ public class Image implements IImage {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-     
+
     @Override
     public void invertColorBit() {
         this.pixels.forEach(pixel -> { 
@@ -244,6 +345,7 @@ public class Image implements IImage {
         
         return concatString;
     }
+    
 
     @Override
     public void depthLayers() {

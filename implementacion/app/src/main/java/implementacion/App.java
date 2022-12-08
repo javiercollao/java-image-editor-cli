@@ -30,7 +30,7 @@ public class App {
         Pixel p5 = new Pixrgb(0,0,22,22,22,2);
         Pixel p6 = new Pixrgb(0,1,2,34,43,2);
         Pixel p7 = new Pixrgb(1,0,222,12,2,5);
-        Pixel p8 = new Pixrgb(1,1,42,42,21,5);
+        Pixel p8 = new Pixrgb(1,1,222,12,2,5);
         
         Pixel p9 = new Pixhex(0,0,"FFA412",2);
         Pixel p10 = new Pixhex(0,1,"A53BF1",2);
@@ -79,7 +79,11 @@ public class App {
         //System.out.print(imagen2.toString());
         
         
-        // histogram      
+        // histogram
+        // System.out.print(imagen1.histogram().toString());
+        // System.out.print(imagen2.histogram().toString());
+        // System.out.print(imagen3.histogram().toString());
+        
         // rotate90  
         // imagen1.rotate90();
         // System.out.print(imagen1.toString());

@@ -23,4 +23,14 @@ public class CompressedImageHex extends CompressedImage{
                 "  , Frequent Color: "+ this.hex+
                 "]";
     }
+
+    @Override
+    public Image decompress() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    @Override
+    public Boolean isCompressed() {
+        return true;
+    }
 }

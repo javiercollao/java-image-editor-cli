@@ -17,7 +17,8 @@ public abstract class CompressedImage {
         this.img = img;
         this.depths = depths;
     }
-    
+    public abstract Boolean isCompressed();
+    public abstract Image decompress();
      @Override
     public abstract String toString();
 }

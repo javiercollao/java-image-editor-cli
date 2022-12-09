@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,4 +24,53 @@ public class CompressedImageBit extends CompressedImage{
                 "  , Frequent Color: "+ this.bit+
                 "]";
     }
+
+    @Override
+    public Image decompress() {
+            
+       //this.img.getPixels();
+       
+       for(int i = 0; i < this.img.getPixels().size(); i++){
+           
+           for(int j = 0; j < this.coordenadas().size(); j++){
+               if(this.img.getPixels().get(i).getPosX() != this.coordenadas().get(j).getPosX() && this.img.getPixels().get(i).getPosY() != this.coordenadas().get(j).getPosY()){
+               
+               }
+           
+           }
+       }
+       
+       Image im = new Image(2,2, this.coordenadas());
+       return im;
+    }
+    
+    
+    public List<Pixel> coordenadas() {
+        
+        List<Pixel> pixelsGenerados = new ArrayList<>();
+        
+        for(int i=0; i < this.img.getWidth(); i++){
+            for(int j = 0; j < this.img.getHeight(); j++ ){
+                Pixel p = new Pixbit(i,j,0,0);
+                pixelsGenerados.add(p);
+            }
+        }
+        
+        return pixelsGenerados;
+        
+    }
+
+    @Override
+    public Boolean isCompressed() {
+        return true;
+    }
+ 
+
+     
+ 
+
+  
+    
+    
+    
 }

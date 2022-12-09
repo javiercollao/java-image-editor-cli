@@ -45,6 +45,12 @@ public class App {
         List<Pixel> pixelsPix = Arrays.asList(p5,p6,p7,p8);
         List<Pixel> pixelsHex = Arrays.asList(p9,p10,p11,p12);
         
+        Pixel p22 = new Pixbit(1,1,0,0);
+        Pixel p23 = new Pixbit(1,1,0,0);
+        
+        //System.out.print(p22.getPosX() == p23.getPosX());
+        
+        
         // instanciacion de una imagen
         
         Image imagen1 = new Image(2,2,pixelsBit);
@@ -89,7 +95,9 @@ public class App {
         // System.out.print(imagen1.toString());
         
         // compress
-        // CompressedImage cimg1 = imagen1.compress();
+        CompressedImage cimg1 = imagen1.compress();
+        Image im = ((CompressedImageBit) cimg1).decompress();
+        System.out.print(im.toString());
         // System.out.print(cimg1.toString());
         
         // CompressedImage cimg2 = imagen2.compress();

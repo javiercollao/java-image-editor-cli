@@ -28,7 +28,7 @@ Image constructor          1
 isBitmap                   1
 isPixmap                   1
 isHexmap                   1
-isCompressed               0
+isCompressed               1
 flipH                      1
 flipV                      1
 crop                       1

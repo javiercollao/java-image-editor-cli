@@ -295,21 +295,30 @@ public class Image implements IImage {
     }
 
     @Override
-    public CompressedImage compress() {
-        
-       
-       List<Integer> listaDepths = new ArrayList<>();
-       Image img = new Image(this.width,this.height, mostFrecuencyColorBitNegativeList());
-       
-       this.mostFrecuencyColorBitList().forEach(depth -> {
-           listaDepths.add(depth.getDepth());
-       });
-       
-       CompressedImage cimg = new CompressedImageBit(img,listaDepths, this.mostRepeatedColorBit());
-       
-       return cimg;
-       
-    
+    public CompressedImage compress() { 
+        List<Integer> listaDepths = new ArrayList<>();
+        if(this.isBitmap()){  
+            Image img = new Image(this.width,this.height, mostFrecuencyColorBitNegativeList());
+            this.mostFrecuencyColorBitList().forEach(depth -> {
+                listaDepths.add(depth.getDepth());
+            });
+            CompressedImage cimg = new CompressedImageBit(img,listaDepths, this.mostRepeatedColorBit());  
+            return cimg;
+        }else if(this.isPixmap()){
+            Image img = new Image(this.width,this.height, mostFrecuencyColorRgbNegativeList());
+            this.mostFrecuencyColorRgbList().forEach(depth -> {
+                listaDepths.add(depth.getDepth());
+            });
+            CompressedImage cimg = new CompressedImageRgb(img,listaDepths, this.mostRepeatedColorRgb());  
+            return cimg;
+        }else{
+            Image img = new Image(this.width,this.height, mostFrecuencyColorHexNegativeList());
+            this.mostFrecuencyColorHexList().forEach(depth -> {
+                listaDepths.add(depth.getDepth());
+            });
+            CompressedImage cimg = new CompressedImageHex(img, listaDepths, this.mostRepeatedColorHex());  
+            return cimg;
+        }
     }
     
     public Integer mostRepeatedColorBit(){
@@ -326,6 +335,35 @@ public class Image implements IImage {
         return colorBit.getBit();
     }
     
+    public List<Integer> mostRepeatedColorRgb(){
+        List<Integer> listaFrecuencia = new ArrayList<Integer>();
+        this.histogram().getHisto().forEach(colorHisto -> {
+            listaFrecuencia.add(colorHisto.getTimes());
+        });
+        Collections.sort(listaFrecuencia, Collections.reverseOrder());
+        int maxColorTimes = listaFrecuencia.get(0);
+        
+        HistogramColor color = this.histogram().getHisto().stream().filter(h -> h.getTimes() == maxColorTimes).toList().get(0);
+        HistogramColorRgb colorRgb = (HistogramColorRgb) color;
+        
+        return colorRgb.getRgb();
+    }
+    
+      public String mostRepeatedColorHex(){
+        List<Integer> listaFrecuencia = new ArrayList<Integer>();
+        this.histogram().getHisto().forEach(colorHisto -> {
+            listaFrecuencia.add(colorHisto.getTimes());
+        });
+        Collections.sort(listaFrecuencia, Collections.reverseOrder());
+        int maxColorTimes = listaFrecuencia.get(0);
+        
+        HistogramColor color = this.histogram().getHisto().stream().filter(h -> h.getTimes() == maxColorTimes).toList().get(0);
+        HistogramColorHex colorHex = (HistogramColorHex) color;
+        
+        return colorHex.getHex();
+    }
+    
+ 
     
     public List<Pixel> mostFrecuencyColorBitList(){
         List<Pixel> lista;
@@ -345,6 +383,60 @@ public class Image implements IImage {
         int colorMax = this.mostRepeatedColorBit();
         lista =  (List<Pixel>) this.pixels.stream().filter(pixel-> {
             return colorMax != ((Pixbit) pixel).getBit();
+        }).toList();
+        
+        return lista;
+        
+    }
+    
+    
+    public List<Pixel> mostFrecuencyColorRgbList(){
+        List<Pixel> lista;
+        
+        List<Integer> colorMax = this.mostRepeatedColorRgb();
+        lista =  (List<Pixel>) this.pixels.stream().filter(pixel-> {
+            return colorMax.equals(((Pixrgb) pixel).getRGB());
+        }).toList();
+        
+        return lista;
+         
+    }
+    
+    
+     public List<Pixel> mostFrecuencyColorRgbNegativeList(){
+        List<Pixel> lista;
+        
+        List<Integer> colorMax = this.mostRepeatedColorRgb();
+        lista =  (List<Pixel>) this.pixels.stream().filter(pixel-> {
+            return !colorMax.equals(((Pixrgb) pixel).getRGB());
+        }).toList();
+        
+        return lista;
+        
+    }
+     
+     
+     
+     
+    public List<Pixel> mostFrecuencyColorHexList(){
+        List<Pixel> lista;
+        
+        String colorMax = this.mostRepeatedColorHex();
+        lista =  (List<Pixel>) this.pixels.stream().filter(pixel-> {
+            return colorMax.equals(((Pixhex) pixel).getHex());
+        }).toList();
+        
+        return lista;
+         
+    }
+    
+    
+     public List<Pixel> mostFrecuencyColorHexNegativeList(){
+        List<Pixel> lista;
+        
+        String colorMax = this.mostRepeatedColorHex();
+        lista =  (List<Pixel>) this.pixels.stream().filter(pixel-> {
+            return !colorMax.equals(((Pixhex) pixel).getHex());
         }).toList();
         
         return lista;

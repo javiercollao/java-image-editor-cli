@@ -92,7 +92,11 @@ public class App {
         // CompressedImage cimg1 = imagen1.compress();
         // System.out.print(cimg1.toString());
         
+        // CompressedImage cimg2 = imagen2.compress();
+        // System.out.print(cimg2.toString());
         
+        // CompressedImage cimg3 = imagen3.compress();
+        // System.out.print(cimg3.toString());
         
         // changePixel
         //imagen2.changePixel(p14);
@@ -116,7 +120,8 @@ public class App {
         
         
         
-        // decompress     
+        // decompress
+        
         
        
     }

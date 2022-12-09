@@ -19,6 +19,8 @@ public class CompressedImageHex extends CompressedImage{
 
     @Override
     public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "[Imagen: "+ this.img.toString() +
+                "  , Frequent Color: "+ this.hex+
+                "]";
     }
 }

@@ -21,7 +21,7 @@ public interface IImage {
     public void imgRGBToHex();
     public Histogram histogram();
     public void rotate90();
-    public void compress(); 
+    public CompressedImage compress(); 
     public void invertColorBit();
     public void invertColorRGB();
     public void changePixel(Pixel p);

@@ -4,20 +4,20 @@
  */
 package model;
 
+import java.util.List;
+
 /**
  *
  * @author delacoll
  */
-public abstract class HistogramColor {
-    int times;
-    public HistogramColor (int times) {
-        this.times = times;
-    }
-
-    public int getTimes() {
-        return times;
+public abstract class CompressedImage {
+    Image img;
+    List<Integer> depths;
+    public CompressedImage (Image img, List<Integer> depths ) {
+        this.img = img;
+        this.depths = depths;
     }
     
-    @Override
+     @Override
     public abstract String toString();
 }

@@ -5,6 +5,7 @@
 package model;
 
 import java.util.ArrayList; 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -181,7 +182,6 @@ public class Image implements IImage {
                 colors.add(color);
             }); 
             listaFrencuenciaColores = filterRgb(colors);
-                
         }else{
             List<String> colors;
             colors = new ArrayList<>();
@@ -191,11 +191,9 @@ public class Image implements IImage {
             }); 
             listaFrencuenciaColores = filterHex(colors);
         }
-        
         Histogram histo;
         histo = new Histogram(listaFrencuenciaColores);
-        return histo;
-        
+        return histo;  
     }
     
     public List<HistogramColor> filterBit(List<Integer> lista){
@@ -255,8 +253,7 @@ public class Image implements IImage {
        
         return histo;
     }
-    
-    
+   
     public List<HistogramColor> filterHex(List<String> lista){
         List<HistogramColor> histo = new ArrayList<>();
  
@@ -298,9 +295,62 @@ public class Image implements IImage {
     }
 
     @Override
-    public void compress() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public CompressedImage compress() {
+        
+       
+       List<Integer> listaDepths = new ArrayList<>();
+       Image img = new Image(this.width,this.height, mostFrecuencyColorBitNegativeList());
+       
+       this.mostFrecuencyColorBitList().forEach(depth -> {
+           listaDepths.add(depth.getDepth());
+       });
+       
+       CompressedImage cimg = new CompressedImageBit(img,listaDepths, this.mostRepeatedColorBit());
+       
+       return cimg;
+       
+    
     }
+    
+    public Integer mostRepeatedColorBit(){
+        List<Integer> listaFrecuencia = new ArrayList<Integer>();
+        this.histogram().getHisto().forEach(colorHisto -> {
+            listaFrecuencia.add(colorHisto.getTimes());
+        });
+        Collections.sort(listaFrecuencia, Collections.reverseOrder());
+        int maxColorTimes = listaFrecuencia.get(0);
+        
+        HistogramColor color = this.histogram().getHisto().stream().filter(h -> h.getTimes() == maxColorTimes).toList().get(0);
+        HistogramColorBit colorBit = (HistogramColorBit) color;
+        
+        return colorBit.getBit();
+    }
+    
+    
+    public List<Pixel> mostFrecuencyColorBitList(){
+        List<Pixel> lista;
+        
+        int colorMax = this.mostRepeatedColorBit();
+        lista =  (List<Pixel>) this.pixels.stream().filter(pixel-> {
+            return colorMax == ((Pixbit) pixel).getBit();
+        }).toList();
+        
+        return lista;
+         
+    }
+    
+    public List<Pixel> mostFrecuencyColorBitNegativeList(){
+        List<Pixel> lista;
+        
+        int colorMax = this.mostRepeatedColorBit();
+        lista =  (List<Pixel>) this.pixels.stream().filter(pixel-> {
+            return colorMax != ((Pixbit) pixel).getBit();
+        }).toList();
+        
+        return lista;
+        
+    }
+    
 
 
     @Override

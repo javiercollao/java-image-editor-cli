@@ -88,7 +88,11 @@ public class App {
         // imagen1.rotate90();
         // System.out.print(imagen1.toString());
         
-        // compress  
+        // compress
+        // CompressedImage cimg1 = imagen1.compress();
+        // System.out.print(cimg1.toString());
+        
+        
         
         // changePixel
         //imagen2.changePixel(p14);

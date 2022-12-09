@@ -33,7 +33,7 @@ flipH                      1
 flipV                      1
 crop                       1
 imgRGBToHex                1
-histogram                  0
+histogram                  1
 rotate90                   1
 compress                   0
 changePixel                1

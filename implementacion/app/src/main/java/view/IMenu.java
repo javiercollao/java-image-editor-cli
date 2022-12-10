@@ -10,6 +10,18 @@ package view;
  */
 public interface IMenu {
      public void iniciar();
-     public void crearNuevaImagen();
+     public void crearNuevaImagen(); 
+     
+     public void crearImagenTipoBitmap();
+     public void crearImagenTipoPixmap();
+     public void crearImagenTipoHexmap();
+     
+     
      public void cargarImagen();
+     public void modificarImagenTipoBitmap(int index);
+     public void modificarImagenTipoPixmap(int index);
+     public void modificarImagenTipoHexmap(int index);
+      
+      
+     
 }

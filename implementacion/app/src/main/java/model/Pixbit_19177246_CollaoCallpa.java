@@ -8,31 +8,26 @@ package model;
  *
  * @author Javier Collao
  */
-public class Pixhex extends Pixel{
-    String hex;
-    
-    public Pixhex (int posX, int posY, String hex, int depth){
+public class Pixbit_19177246_CollaoCallpa extends Pixel_19177246_CollaoCallpa{
+    int bit;
+
+    public Pixbit_19177246_CollaoCallpa (int posX, int posY, int bit, int depth){
         super(posX, posY, depth);
-        this.hex = hex;
+        this.bit = bit;
     }
 
-    public String getHex() {
-        return hex;
+    public int getBit() {
+        return bit;
     }
 
-    public void setHex(String hex) {
-        this.hex = hex;
+    public void setBit(int bit) {
+        this.bit = bit;
     }
+
     
-    
-    @Override
-    void invertColor() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     @Override
     boolean isBit() {
-        return false;
+        return true;
     }
 
     @Override
@@ -42,26 +37,38 @@ public class Pixhex extends Pixel{
 
     @Override
     boolean isHex() {
-        // 6 char?
-        return true;
+        return false;
+    }
+    
+    @Override
+    void invertColor() {
+        if(this.getBit() == 0){
+            this.setBit(1);
+        }else{
+            this.setBit(0);
+        }
     }
 
-    
     @Override
     public String toString() {
         return "["+
                "x = "+ this.getPosX() +
                ", y = "+ this.getPosY() +
-               ", hex = "+ this.getHex() +
+               ", bit = "+ this.getBit() +
                ", depth = "+ this.getDepth() +
                "]\n";
     }
+    
+    // @Override
+    //public String toString() {
+    //    return ""+this.getBit();
+   // }
 
     @Override
     String rgbToHex() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-   
     
+
 }

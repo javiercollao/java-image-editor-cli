@@ -8,7 +8,7 @@ package view;
  *
  * @author Javier Collao
  */
-public interface IMenu {
+public interface IMenu_19177246_CollaoCallpa {
      public void iniciar();
      public void crearNuevaImagen(); 
      

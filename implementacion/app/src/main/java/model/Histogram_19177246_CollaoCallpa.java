@@ -11,18 +11,18 @@ import java.util.List;
  *
  * @author Javier Collao
  */
-public class Histogram {
-    public List<HistogramColor> histo;
+public class Histogram_19177246_CollaoCallpa {
+    public List<HistogramColor_19177246_CollaoCallpa> histo;
     
-    public Histogram (List<HistogramColor> histo) {
+    public Histogram_19177246_CollaoCallpa (List<HistogramColor_19177246_CollaoCallpa> histo) {
         this.histo = histo; 
     }
 
-    public List<HistogramColor> getHisto() {
+    public List<HistogramColor_19177246_CollaoCallpa> getHisto() {
         return histo;
     }
 
-    public void setHisto(List<HistogramColor> histo) {
+    public void setHisto(List<HistogramColor_19177246_CollaoCallpa> histo) {
         this.histo = histo;
     }
     

@@ -11,9 +11,9 @@ import java.util.List;
  *
  * @author Javier Collao
  */
-public class CompressedImageHex extends CompressedImage{
+public class CompressedImageHex_19177246_CollaoCallpa extends CompressedImage_19177246_CollaoCallpa{
     String hex;
-    public CompressedImageHex (Image img, List<Integer> depths,  String hex) {
+    public CompressedImageHex_19177246_CollaoCallpa (Image_19177246_CollaoCallpa img, List<Integer> depths,  String hex) {
         super(img, depths);
         this.hex = hex;
     }
@@ -26,27 +26,27 @@ public class CompressedImageHex extends CompressedImage{
     }
 
     @Override
-    public Image decompress() {
-         List<Pixel> mylist = this.regenerarPixeles();
+    public Image_19177246_CollaoCallpa decompress() {
+         List<Pixel_19177246_CollaoCallpa> mylist = this.regenerarPixeles();
        for (int k = 0; k < this.img.getPixels().size() ; k++){
            mylist.add(this.img.getPixels().get(k));
        }
-       Image imagen = new Image(this.img.getWidth(),this.img.getHeight(), mylist);
+       Image_19177246_CollaoCallpa imagen = new Image_19177246_CollaoCallpa(this.img.getWidth(),this.img.getHeight(), mylist);
        return imagen;
     }
     
-    public List<Pixel> regenerarPixeles(){
-        List<Pixel> mylist = this.filtrarPixeles();
+    public List<Pixel_19177246_CollaoCallpa> regenerarPixeles(){
+        List<Pixel_19177246_CollaoCallpa> mylist = this.filtrarPixeles();
         for (int k = 0; k < this.filtrarPixeles().size() ; k++){
             mylist.get(k).setDepth(this.depths.get(k));
-            ((Pixhex) mylist.get(k)).setHex(this.hex);
+            ((Pixhex_19177246_CollaoCallpa) mylist.get(k)).setHex(this.hex);
         }
         return mylist;
     }
     
     
-    public List<Pixel> filtrarPixeles(){
-        List<Pixel> newpixels = new ArrayList<>();
+    public List<Pixel_19177246_CollaoCallpa> filtrarPixeles(){
+        List<Pixel_19177246_CollaoCallpa> newpixels = new ArrayList<>();
         List<Boolean> newpixelsBool = new ArrayList<>();
         for (int k = 0; k < this.coordenadas().size() ; k++){
             newpixelsBool.add(false);
@@ -67,11 +67,11 @@ public class CompressedImageHex extends CompressedImage{
     }
     
     
-    public List<Pixel> coordenadas() {
-        List<Pixel> pixelsGenerados = new ArrayList<>();
+    public List<Pixel_19177246_CollaoCallpa> coordenadas() {
+        List<Pixel_19177246_CollaoCallpa> pixelsGenerados = new ArrayList<>();
         for(int i=0; i < this.img.getWidth(); i++){
             for(int j = 0; j < this.img.getHeight(); j++ ){
-                Pixel p = new Pixhex(i,j,"vacio",0);
+                Pixel_19177246_CollaoCallpa p = new Pixhex_19177246_CollaoCallpa(i,j,"vacio",0);
                 pixelsGenerados.add(p);
             }
         }

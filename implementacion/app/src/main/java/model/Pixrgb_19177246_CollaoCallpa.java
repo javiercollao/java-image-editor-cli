@@ -11,12 +11,12 @@ import java.util.List;
  *
  * @author Javier Collao
  */
-public class Pixrgb extends Pixel{
+public class Pixrgb_19177246_CollaoCallpa extends Pixel_19177246_CollaoCallpa{
     int r;
     int g;
     int b;
     
-    public Pixrgb (int posX, int posY, int r, int g, int b, int depth){
+    public Pixrgb_19177246_CollaoCallpa (int posX, int posY, int r, int g, int b, int depth){
         super(posX, posY, depth);
         this.r = r;
         this.g = g;

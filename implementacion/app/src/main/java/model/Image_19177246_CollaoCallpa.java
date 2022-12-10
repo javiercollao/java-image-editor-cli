@@ -12,12 +12,12 @@ import java.util.List;
  *
  * @author Javier Collao
  */
-public class Image implements IImage {
+public class Image_19177246_CollaoCallpa implements IImage_19177246_CollaoCallpa {
     public int width;
     public int height;
-    public List<Pixel> pixels;
+    public List<Pixel_19177246_CollaoCallpa> pixels;
 
-    public Image(int width, int height, List<Pixel> pixels) {
+    public Image_19177246_CollaoCallpa(int width, int height, List<Pixel_19177246_CollaoCallpa> pixels) {
         this.width = width;
         this.height = height;
         this.pixels = pixels;
@@ -39,11 +39,11 @@ public class Image implements IImage {
         this.height = height;
     }
 
-    public List<Pixel> getPixels() {
+    public List<Pixel_19177246_CollaoCallpa> getPixels() {
         return pixels;
     }
 
-    public void setPixels(List<Pixel> pixels) {
+    public void setPixels(List<Pixel_19177246_CollaoCallpa> pixels) {
         this.pixels = pixels;
     }
     
@@ -142,7 +142,7 @@ public class Image implements IImage {
     /*  Descripción: Recortar una imágen a partir de un cuadrante.  */
     @Override
     public void crop(int x1, int y1, int x2, int y2) {
-        List<Pixel> lista = new ArrayList<>();
+        List<Pixel_19177246_CollaoCallpa> lista = new ArrayList<>();
         this.pixels.forEach(pixel -> {
             if(pixel.getPosX() >= x1 && pixel.getPosX() <= x2 && pixel.getPosY()<= y1){
                 lista.add(pixel);
@@ -159,10 +159,10 @@ public class Image implements IImage {
     /* Descripción: Transforma una imagen desde una representación RGB a una representación HEX.  */
     @Override
     public void imgRGBToHex() {
-        List<Pixel> lista = new ArrayList<>();
+        List<Pixel_19177246_CollaoCallpa> lista = new ArrayList<>();
         if(this.isPixmap()){
             this.pixels.forEach(pixel -> {
-                Pixel p = new Pixhex(pixel.getPosX(),pixel.getPosY(), pixel.rgbToHex(), pixel.getDepth());
+                Pixel_19177246_CollaoCallpa p = new Pixhex_19177246_CollaoCallpa(pixel.getPosX(),pixel.getPosY(), pixel.rgbToHex(), pixel.getDepth());
                 lista.add(p);
             });
             this.setPixels(lista);
@@ -173,12 +173,12 @@ public class Image implements IImage {
 
     /*  Descripción: Retorna un histograma de frecuencias a partir de los colores en cada una de las imágenes. Debe funcionar para bitmap-d, pixmap-d y hexmap-d. */
     @Override
-    public Histogram histogram() { 
-        List<HistogramColor> listaFrencuenciaColores = null;
+    public Histogram_19177246_CollaoCallpa histogram() { 
+        List<HistogramColor_19177246_CollaoCallpa> listaFrencuenciaColores = null;
         if(this.isBitmap()){  
             List<Integer> colors = new ArrayList<>();
             this.pixels.forEach(pixel -> {
-                int bit = ((Pixbit)pixel).getBit();
+                int bit = ((Pixbit_19177246_CollaoCallpa)pixel).getBit();
                 colors.add(bit);
             });
             listaFrencuenciaColores = filterBit(colors);
@@ -186,7 +186,7 @@ public class Image implements IImage {
             List<List<Integer>> colors;
             colors = new ArrayList<>();
             this.pixels.forEach(pixel -> {
-                List<Integer> color = ((Pixrgb)pixel).getRGB();
+                List<Integer> color = ((Pixrgb_19177246_CollaoCallpa)pixel).getRGB();
                 colors.add(color);
             }); 
             listaFrencuenciaColores = filterRgb(colors);
@@ -194,18 +194,18 @@ public class Image implements IImage {
             List<String> colors;
             colors = new ArrayList<>();
             this.pixels.forEach(pixel -> {
-                String hex = ((Pixhex)pixel).getHex();
+                String hex = ((Pixhex_19177246_CollaoCallpa)pixel).getHex();
                 colors.add(hex);
             }); 
             listaFrencuenciaColores = filterHex(colors);
         }
-        Histogram histo;
-        histo = new Histogram(listaFrencuenciaColores);
+        Histogram_19177246_CollaoCallpa histo;
+        histo = new Histogram_19177246_CollaoCallpa(listaFrencuenciaColores);
         return histo;  
     }
     
-    public List<HistogramColor> filterBit(List<Integer> lista){
-        List<HistogramColor> histo = new ArrayList<>();
+    public List<HistogramColor_19177246_CollaoCallpa> filterBit(List<Integer> lista){
+        List<HistogramColor_19177246_CollaoCallpa> histo = new ArrayList<>();
  
         for (int i = 0; i < lista.size(); i++){
             int flag = 0;
@@ -225,16 +225,16 @@ public class Image implements IImage {
                 if (lista.get(i).equals(lista.get(j)))
                     count++;
             }
-            HistogramColorBit colorBit;
-            colorBit = new HistogramColorBit(lista.get(i),count); 
+            HistogramColorBit_19177246_CollaoCallpa colorBit;
+            colorBit = new HistogramColorBit_19177246_CollaoCallpa(lista.get(i),count); 
             histo.add(colorBit);
         }
        
         return histo;
     }
     
-    public List<HistogramColor> filterRgb(List<List<Integer>> lista){
-        List<HistogramColor> histo = new ArrayList<>();
+    public List<HistogramColor_19177246_CollaoCallpa> filterRgb(List<List<Integer>> lista){
+        List<HistogramColor_19177246_CollaoCallpa> histo = new ArrayList<>();
  
         for (int i = 0; i < lista.size(); i++){
             int flag = 0;
@@ -254,16 +254,16 @@ public class Image implements IImage {
                 if (lista.get(i).equals(lista.get(j)))
                     count++;
             }
-            HistogramColorRgb colorRgb;
-            colorRgb = new HistogramColorRgb(lista.get(i),count); 
+            HistogramColorRgb_19177246_CollaoCallpa colorRgb;
+            colorRgb = new HistogramColorRgb_19177246_CollaoCallpa(lista.get(i),count); 
             histo.add(colorRgb);
         }
        
         return histo;
     }
    
-    public List<HistogramColor> filterHex(List<String> lista){
-        List<HistogramColor> histo = new ArrayList<>();
+    public List<HistogramColor_19177246_CollaoCallpa> filterHex(List<String> lista){
+        List<HistogramColor_19177246_CollaoCallpa> histo = new ArrayList<>();
  
         for (int i = 0; i < lista.size(); i++){
             int flag = 0;
@@ -283,8 +283,8 @@ public class Image implements IImage {
                 if (lista.get(i).equals(lista.get(j)))
                     count++;
             }
-            HistogramColorHex colorHex;
-            colorHex = new HistogramColorHex(lista.get(i),count); 
+            HistogramColorHex_19177246_CollaoCallpa colorHex;
+            colorHex = new HistogramColorHex_19177246_CollaoCallpa(lista.get(i),count); 
             histo.add(colorHex);
         }
        
@@ -305,28 +305,28 @@ public class Image implements IImage {
 
     /*  Descripción: Comprime una imágen eliminando aquellos pixeles con el color más frecuente. La imagen comprimida resultante solo se puede manipular con las otras funciones una vez que haya sido descomprimida a partir de la función señalada más adelante */
     @Override
-    public CompressedImage compress() { 
+    public CompressedImage_19177246_CollaoCallpa compress() { 
         List<Integer> listaDepths = new ArrayList<>();
         if(this.isBitmap()){  
-            Image img = new Image(this.width,this.height, mostFrecuencyColorBitNegativeList());
+            Image_19177246_CollaoCallpa img = new Image_19177246_CollaoCallpa(this.width,this.height, mostFrecuencyColorBitNegativeList());
             this.mostFrecuencyColorBitList().forEach(depth -> {
                 listaDepths.add(depth.getDepth());
             });
-            CompressedImage cimg = new CompressedImageBit(img,listaDepths, this.mostRepeatedColorBit());  
+            CompressedImage_19177246_CollaoCallpa cimg = new CompressedImageBit_19177246_CollaoCallpa(img,listaDepths, this.mostRepeatedColorBit());  
             return cimg;
         }else if(this.isPixmap()){
-            Image img = new Image(this.width,this.height, mostFrecuencyColorRgbNegativeList());
+            Image_19177246_CollaoCallpa img = new Image_19177246_CollaoCallpa(this.width,this.height, mostFrecuencyColorRgbNegativeList());
             this.mostFrecuencyColorRgbList().forEach(depth -> {
                 listaDepths.add(depth.getDepth());
             });
-            CompressedImage cimg = new CompressedImageRgb(img,listaDepths, this.mostRepeatedColorRgb());  
+            CompressedImage_19177246_CollaoCallpa cimg = new CompressedImageRgb_19177246_CollaoCallpa(img,listaDepths, this.mostRepeatedColorRgb());  
             return cimg;
         }else{
-            Image img = new Image(this.width,this.height, mostFrecuencyColorHexNegativeList());
+            Image_19177246_CollaoCallpa img = new Image_19177246_CollaoCallpa(this.width,this.height, mostFrecuencyColorHexNegativeList());
             this.mostFrecuencyColorHexList().forEach(depth -> {
                 listaDepths.add(depth.getDepth());
             });
-            CompressedImage cimg = new CompressedImageHex(img, listaDepths, this.mostRepeatedColorHex());  
+            CompressedImage_19177246_CollaoCallpa cimg = new CompressedImageHex_19177246_CollaoCallpa(img, listaDepths, this.mostRepeatedColorHex());  
             return cimg;
         }
     }
@@ -340,8 +340,8 @@ public class Image implements IImage {
         Collections.sort(listaFrecuencia, Collections.reverseOrder());
         int maxColorTimes = listaFrecuencia.get(0);
         
-        HistogramColor color = this.histogram().getHisto().stream().filter(h -> h.getTimes() == maxColorTimes).toList().get(0);
-        HistogramColorBit colorBit = (HistogramColorBit) color;
+        HistogramColor_19177246_CollaoCallpa color = this.histogram().getHisto().stream().filter(h -> h.getTimes() == maxColorTimes).toList().get(0);
+        HistogramColorBit_19177246_CollaoCallpa colorBit = (HistogramColorBit_19177246_CollaoCallpa) color;
         
         return colorBit.getBit();
     }
@@ -355,8 +355,8 @@ public class Image implements IImage {
         Collections.sort(listaFrecuencia, Collections.reverseOrder());
         int maxColorTimes = listaFrecuencia.get(0);
         
-        HistogramColor color = this.histogram().getHisto().stream().filter(h -> h.getTimes() == maxColorTimes).toList().get(0);
-        HistogramColorRgb colorRgb = (HistogramColorRgb) color;
+        HistogramColor_19177246_CollaoCallpa color = this.histogram().getHisto().stream().filter(h -> h.getTimes() == maxColorTimes).toList().get(0);
+        HistogramColorRgb_19177246_CollaoCallpa colorRgb = (HistogramColorRgb_19177246_CollaoCallpa) color;
         
         return colorRgb.getRgb();
     }
@@ -370,78 +370,78 @@ public class Image implements IImage {
         Collections.sort(listaFrecuencia, Collections.reverseOrder());
         int maxColorTimes = listaFrecuencia.get(0);
         
-        HistogramColor color = this.histogram().getHisto().stream().filter(h -> h.getTimes() == maxColorTimes).toList().get(0);
-        HistogramColorHex colorHex = (HistogramColorHex) color;
+        HistogramColor_19177246_CollaoCallpa color = this.histogram().getHisto().stream().filter(h -> h.getTimes() == maxColorTimes).toList().get(0);
+        HistogramColorHex_19177246_CollaoCallpa colorHex = (HistogramColorHex_19177246_CollaoCallpa) color;
         
         return colorHex.getHex();
     }
     
-    public List<Pixel> mostFrecuencyColorBitList(){
-        List<Pixel> lista;
+    public List<Pixel_19177246_CollaoCallpa> mostFrecuencyColorBitList(){
+        List<Pixel_19177246_CollaoCallpa> lista;
         
         int colorMax = this.mostRepeatedColorBit();
-        lista =  (List<Pixel>) this.pixels.stream().filter(pixel-> {
-            return colorMax == ((Pixbit) pixel).getBit();
+        lista =  (List<Pixel_19177246_CollaoCallpa>) this.pixels.stream().filter(pixel-> {
+            return colorMax == ((Pixbit_19177246_CollaoCallpa) pixel).getBit();
         }).toList();
         
         return lista;
          
     }
     
-    public List<Pixel> mostFrecuencyColorBitNegativeList(){
-        List<Pixel> lista;
+    public List<Pixel_19177246_CollaoCallpa> mostFrecuencyColorBitNegativeList(){
+        List<Pixel_19177246_CollaoCallpa> lista;
         
         int colorMax = this.mostRepeatedColorBit();
-        lista =  (List<Pixel>) this.pixels.stream().filter(pixel-> {
-            return colorMax != ((Pixbit) pixel).getBit();
+        lista =  (List<Pixel_19177246_CollaoCallpa>) this.pixels.stream().filter(pixel-> {
+            return colorMax != ((Pixbit_19177246_CollaoCallpa) pixel).getBit();
         }).toList();
         
         return lista;
         
     }
  
-    public List<Pixel> mostFrecuencyColorRgbList(){
-        List<Pixel> lista;
+    public List<Pixel_19177246_CollaoCallpa> mostFrecuencyColorRgbList(){
+        List<Pixel_19177246_CollaoCallpa> lista;
         
         List<Integer> colorMax = this.mostRepeatedColorRgb();
-        lista =  (List<Pixel>) this.pixels.stream().filter(pixel-> {
-            return colorMax.equals(((Pixrgb) pixel).getRGB());
+        lista =  (List<Pixel_19177246_CollaoCallpa>) this.pixels.stream().filter(pixel-> {
+            return colorMax.equals(((Pixrgb_19177246_CollaoCallpa) pixel).getRGB());
         }).toList();
         
         return lista;
          
     }
     
-    public List<Pixel> mostFrecuencyColorRgbNegativeList(){
-        List<Pixel> lista;
+    public List<Pixel_19177246_CollaoCallpa> mostFrecuencyColorRgbNegativeList(){
+        List<Pixel_19177246_CollaoCallpa> lista;
         
         List<Integer> colorMax = this.mostRepeatedColorRgb();
-        lista =  (List<Pixel>) this.pixels.stream().filter(pixel-> {
-            return !colorMax.equals(((Pixrgb) pixel).getRGB());
+        lista =  (List<Pixel_19177246_CollaoCallpa>) this.pixels.stream().filter(pixel-> {
+            return !colorMax.equals(((Pixrgb_19177246_CollaoCallpa) pixel).getRGB());
         }).toList();
         
         return lista;
         
     }
      
-    public List<Pixel> mostFrecuencyColorHexList(){
-        List<Pixel> lista;
+    public List<Pixel_19177246_CollaoCallpa> mostFrecuencyColorHexList(){
+        List<Pixel_19177246_CollaoCallpa> lista;
         
         String colorMax = this.mostRepeatedColorHex();
-        lista =  (List<Pixel>) this.pixels.stream().filter(pixel-> {
-            return colorMax.equals(((Pixhex) pixel).getHex());
+        lista =  (List<Pixel_19177246_CollaoCallpa>) this.pixels.stream().filter(pixel-> {
+            return colorMax.equals(((Pixhex_19177246_CollaoCallpa) pixel).getHex());
         }).toList();
         
         return lista;
          
     }
     
-    public List<Pixel> mostFrecuencyColorHexNegativeList(){
-        List<Pixel> lista;
+    public List<Pixel_19177246_CollaoCallpa> mostFrecuencyColorHexNegativeList(){
+        List<Pixel_19177246_CollaoCallpa> lista;
         
         String colorMax = this.mostRepeatedColorHex();
-        lista =  (List<Pixel>) this.pixels.stream().filter(pixel-> {
-            return !colorMax.equals(((Pixhex) pixel).getHex());
+        lista =  (List<Pixel_19177246_CollaoCallpa>) this.pixels.stream().filter(pixel-> {
+            return !colorMax.equals(((Pixhex_19177246_CollaoCallpa) pixel).getHex());
         }).toList();
         
         return lista;
@@ -467,8 +467,8 @@ public class Image implements IImage {
 
     /* Descripción: Permite modificar un pixel de la lista pixeles de la imagen  */
     @Override
-    public void changePixel(Pixel p) {
-        List<Pixel> lista = new ArrayList<>();
+    public void changePixel(Pixel_19177246_CollaoCallpa p) {
+        List<Pixel_19177246_CollaoCallpa> lista = new ArrayList<>();
         this.pixels.forEach(pixel -> { 
             if(pixel.getPosX() == p.getPosX() && pixel.getPosY() == p.getPosY()){
                 lista.add(p);

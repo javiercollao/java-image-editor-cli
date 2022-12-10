@@ -15,15 +15,15 @@ import model.*;
  *
  * @author Javier Collao
  */
-public class Menu implements IMenu{
+public class Menu_19177246_CollaoCallpa implements IMenu_19177246_CollaoCallpa{
     
-    Menu menu;
+    Menu_19177246_CollaoCallpa menu;
     Scanner input = new Scanner(System.in);
-    Image image;
+    Image_19177246_CollaoCallpa image;
     Boolean compressBoolean = false;
-    CompressedImage cimage;
+    CompressedImage_19177246_CollaoCallpa cimage;
 
-    public void setImage(Image image) {
+    public void setImage(Image_19177246_CollaoCallpa image) {
         this.image = image;
     }
 
@@ -31,7 +31,7 @@ public class Menu implements IMenu{
         this.compressBoolean = compressBoolean;
     }
 
-    public void setCimage(CompressedImage cimage) {
+    public void setCimage(CompressedImage_19177246_CollaoCallpa cimage) {
         this.cimage = cimage;
     }
      
@@ -167,7 +167,7 @@ public class Menu implements IMenu{
         int width = input.nextInt();
         System.out.println("Ingresar largo:");
         int height = input.nextInt();
-        List<Pixel> pixeles = new ArrayList<>();
+        List<Pixel_19177246_CollaoCallpa> pixeles = new ArrayList<>();
         for(int i=0; i < (width*height); i++){
             int n = i +1;
             System.out.println("\npixbit "+n);
@@ -179,10 +179,10 @@ public class Menu implements IMenu{
             int bit = input.nextInt();
             System.out.println("Ingresar profundidad: ");
             int depth = input.nextInt();
-            Pixbit pixbit = new Pixbit(x,y,bit,depth);
+            Pixbit_19177246_CollaoCallpa pixbit = new Pixbit_19177246_CollaoCallpa(x,y,bit,depth);
             pixeles.add(pixbit);
         }
-        Image imagen = new Image(width,height,pixeles);
+        Image_19177246_CollaoCallpa imagen = new Image_19177246_CollaoCallpa(width,height,pixeles);
         this.image = imagen;
         System.out.println("\n");
         System.out.println("Bitmap creado: \n");
@@ -201,7 +201,7 @@ public class Menu implements IMenu{
         int width = input.nextInt();
         System.out.println("Ingresar largo:");
         int height = input.nextInt();
-        List<Pixel> pixeles = new ArrayList<>();
+        List<Pixel_19177246_CollaoCallpa> pixeles = new ArrayList<>();
         for(int i=0; i < (width*height); i++){
             int n = i +1;
             System.out.println("\npixrgb "+n);
@@ -217,10 +217,10 @@ public class Menu implements IMenu{
             int b = input.nextInt();
             System.out.println("Ingresar profundidad: ");
             int depth = input.nextInt();
-            Pixrgb pixrgb = new Pixrgb(x,y,r,g,b,depth);
+            Pixrgb_19177246_CollaoCallpa pixrgb = new Pixrgb_19177246_CollaoCallpa(x,y,r,g,b,depth);
             pixeles.add(pixrgb);
         }
-        Image imagen = new Image(width,height,pixeles); 
+        Image_19177246_CollaoCallpa imagen = new Image_19177246_CollaoCallpa(width,height,pixeles); 
         this.image = imagen;
         System.out.println("\n");
         System.out.println("Pixmap creado: \n");
@@ -239,7 +239,7 @@ public class Menu implements IMenu{
         int width = input.nextInt();
         System.out.println("Ingresar largo:");
         int height = input.nextInt();
-        List<Pixel> pixeles = new ArrayList<>();
+        List<Pixel_19177246_CollaoCallpa> pixeles = new ArrayList<>();
         for(int i=0; i < (width*height); i++){
             int n = i +1;
             System.out.println("\npixhex "+n);
@@ -251,10 +251,10 @@ public class Menu implements IMenu{
             String hex = input.nextLine();
             System.out.println("Ingresar profundidad: ");
             int depth = input.nextInt();
-            Pixhex pixhex = new Pixhex(x,y,hex,depth);
+            Pixhex_19177246_CollaoCallpa pixhex = new Pixhex_19177246_CollaoCallpa(x,y,hex,depth);
             pixeles.add(pixhex);
         }
-        Image imagen = new Image(width,height,pixeles); 
+        Image_19177246_CollaoCallpa imagen = new Image_19177246_CollaoCallpa(width,height,pixeles); 
         this.image = imagen;
         System.out.println("\n");
         System.out.println("Hexmap creado: \n");
@@ -269,16 +269,16 @@ public class Menu implements IMenu{
     public void modificarImagenTipoBitmap(int index) { 
         
         if(index == 0){
-            Pixel p1 = new Pixbit(0,0,1,4);
-            Pixel p2 = new Pixbit(0,1,0,4);
-            Pixel p3 = new Pixbit(1,0,1,3);
-            Pixel p4 = new Pixbit(1,1,1,42);
-            List<Pixel> pixelsBit = Arrays.asList(p1,p2,p3,p4);
-            Image ima1 = new Image(2,2,pixelsBit);
+            Pixel_19177246_CollaoCallpa p1 = new Pixbit_19177246_CollaoCallpa(0,0,1,4);
+            Pixel_19177246_CollaoCallpa p2 = new Pixbit_19177246_CollaoCallpa(0,1,0,4);
+            Pixel_19177246_CollaoCallpa p3 = new Pixbit_19177246_CollaoCallpa(1,0,1,3);
+            Pixel_19177246_CollaoCallpa p4 = new Pixbit_19177246_CollaoCallpa(1,1,1,42);
+            List<Pixel_19177246_CollaoCallpa> pixelsBit = Arrays.asList(p1,p2,p3,p4);
+            Image_19177246_CollaoCallpa ima1 = new Image_19177246_CollaoCallpa(2,2,pixelsBit);
             this.image = ima1;
         }
         
-        Image img =  this.image;
+        Image_19177246_CollaoCallpa img =  this.image;
         int opcion = 0;
         do{ 
             System.out.println("\n### Manipulador de imágenes ###");
@@ -325,7 +325,7 @@ public class Menu implements IMenu{
                             int bit = input.nextInt();
                             System.out.println("Ingresar profundidad: ");
                             int depth = input.nextInt();
-                            Pixbit pixbit = new Pixbit(x,y,bit,depth);
+                            Pixbit_19177246_CollaoCallpa pixbit = new Pixbit_19177246_CollaoCallpa(x,y,bit,depth);
                             
                             img.changePixel(pixbit); 
                             this.setImage(img); 
@@ -349,13 +349,13 @@ public class Menu implements IMenu{
                             this.setImage(img); 
                             break;
                     case 7: 
-                            CompressedImage cim = img.compress();
+                            CompressedImage_19177246_CollaoCallpa cim = img.compress();
                             this.setCompressBoolean(true);
                             this.setCimage(cim);
                             break;
                     case 8: 
                             if(this.compressBoolean == true){
-                                Image im = this.cimage.decompress();
+                                Image_19177246_CollaoCallpa im = this.cimage.decompress();
                                 this.setCompressBoolean(false);
                                 this.setImage(im);
                             }else{
@@ -381,15 +381,15 @@ public class Menu implements IMenu{
     @Override
     public void modificarImagenTipoPixmap(int index) {
         if(index == 1){
-            Pixel p5 = new Pixrgb(0,0,22,22,22,2);
-            Pixel p6 = new Pixrgb(0,1,2,34,43,2);
-            Pixel p7 = new Pixrgb(1,0,222,12,2,5);
-            Pixel p8 = new Pixrgb(1,1,222,12,2,5);
-            List<Pixel> pixelsPix = Arrays.asList(p5,p6,p7,p8);
-            Image imagen2 =  new Image(2,2,pixelsPix);
+            Pixel_19177246_CollaoCallpa p5 = new Pixrgb_19177246_CollaoCallpa(0,0,22,22,22,2);
+            Pixel_19177246_CollaoCallpa p6 = new Pixrgb_19177246_CollaoCallpa(0,1,2,34,43,2);
+            Pixel_19177246_CollaoCallpa p7 = new Pixrgb_19177246_CollaoCallpa(1,0,222,12,2,5);
+            Pixel_19177246_CollaoCallpa p8 = new Pixrgb_19177246_CollaoCallpa(1,1,222,12,2,5);
+            List<Pixel_19177246_CollaoCallpa> pixelsPix = Arrays.asList(p5,p6,p7,p8);
+            Image_19177246_CollaoCallpa imagen2 =  new Image_19177246_CollaoCallpa(2,2,pixelsPix);
             this.image = imagen2;
         }
-        Image img =  this.image;
+        Image_19177246_CollaoCallpa img =  this.image;
         int opcion = 0;
         do{ 
             System.out.println("\n### Manipulador de imágenes ###");
@@ -441,7 +441,7 @@ public class Menu implements IMenu{
                             int b = input.nextInt();
                             System.out.println("Ingresar profundidad: ");
                             int depth = input.nextInt();
-                            Pixrgb pixrgb = new Pixrgb(x,y,r,g,b,depth);
+                            Pixrgb_19177246_CollaoCallpa pixrgb = new Pixrgb_19177246_CollaoCallpa(x,y,r,g,b,depth);
                             
                             img.changePixel(pixrgb); 
                             this.setImage(img); 
@@ -469,13 +469,13 @@ public class Menu implements IMenu{
                             this.setImage(img); 
                             break;
                     case 8: 
-                            CompressedImage cim = img.compress();
+                            CompressedImage_19177246_CollaoCallpa cim = img.compress();
                             this.setCompressBoolean(true);
                             this.setCimage(cim); 
                             break;
                     case 9: 
                             if(this.compressBoolean == true){
-                                Image im = this.cimage.decompress();
+                                Image_19177246_CollaoCallpa im = this.cimage.decompress();
                                 this.setCompressBoolean(false);
                                 this.setImage(im);
                             }else{
@@ -501,15 +501,15 @@ public class Menu implements IMenu{
     @Override
     public void modificarImagenTipoHexmap(int index) {
         if(index == 2){
-            Pixel p9 = new Pixhex(0,0,"FFA412",2);
-            Pixel p10 = new Pixhex(0,1,"A53BF1",2);
-            Pixel p11 = new Pixhex(1,0,"FF5332",5);
-            Pixel p12 = new Pixhex(1,1,"F452AB",5);
-            List<Pixel> pixelsHex = Arrays.asList(p9,p10,p11,p12);
-            Image imagen3 =  new Image(2,2,pixelsHex);
+            Pixel_19177246_CollaoCallpa p9 = new Pixhex_19177246_CollaoCallpa(0,0,"FFA412",2);
+            Pixel_19177246_CollaoCallpa p10 = new Pixhex_19177246_CollaoCallpa(0,1,"A53BF1",2);
+            Pixel_19177246_CollaoCallpa p11 = new Pixhex_19177246_CollaoCallpa(1,0,"FF5332",5);
+            Pixel_19177246_CollaoCallpa p12 = new Pixhex_19177246_CollaoCallpa(1,1,"F452AB",5);
+            List<Pixel_19177246_CollaoCallpa> pixelsHex = Arrays.asList(p9,p10,p11,p12);
+            Image_19177246_CollaoCallpa imagen3 =  new Image_19177246_CollaoCallpa(2,2,pixelsHex);
             this.image = imagen3;
         }
-        Image img =  this.image;
+        Image_19177246_CollaoCallpa img =  this.image;
         int opcion = 0;
         do{ 
             System.out.println("\n### Manipulador de imágenes ###");
@@ -554,7 +554,7 @@ public class Menu implements IMenu{
                             String hex = input.nextLine();
                             System.out.println("Ingresar profundidad: ");
                             int depth = input.nextInt();
-                            Pixhex pixhex = new Pixhex(x,y,hex,depth);
+                            Pixhex_19177246_CollaoCallpa pixhex = new Pixhex_19177246_CollaoCallpa(x,y,hex,depth);
                             
                             img.changePixel(pixhex); 
                             this.setImage(img); 
@@ -574,13 +574,13 @@ public class Menu implements IMenu{
                             this.setImage(img); 
                             break;
                     case 6: 
-                            CompressedImage cim = img.compress();
+                            CompressedImage_19177246_CollaoCallpa cim = img.compress();
                             this.setCompressBoolean(true);
                             this.setCimage(cim); 
                             break;
                     case 7: 
                             if(this.compressBoolean == true){
-                                Image im = this.cimage.decompress();
+                                Image_19177246_CollaoCallpa im = this.cimage.decompress();
                                 this.setCompressBoolean(false);
                                 this.setImage(im);
                             }else{

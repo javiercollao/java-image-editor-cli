@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Javier Collao
  */
-public interface IImage {
+public interface IImage_19177246_CollaoCallpa {
     public boolean isBitmap();
     public boolean isPixmap();
     public boolean isHexmap();
@@ -19,12 +19,12 @@ public interface IImage {
     public void flipV();
     public void crop(int x1, int y1, int x2, int y2);
     public void imgRGBToHex();
-    public Histogram histogram();
+    public Histogram_19177246_CollaoCallpa histogram();
     public void rotate90();
-    public CompressedImage compress(); 
+    public CompressedImage_19177246_CollaoCallpa compress(); 
     public void invertColorBit();
     public void invertColorRGB();
-    public void changePixel(Pixel p);
+    public void changePixel(Pixel_19177246_CollaoCallpa p);
     public String toString();
     public void depthLayers(); 
 }

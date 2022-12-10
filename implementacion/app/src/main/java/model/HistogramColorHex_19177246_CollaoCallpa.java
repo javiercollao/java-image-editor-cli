@@ -8,9 +8,9 @@ package model;
  *
  * @author Javier Collao
  */
-public class HistogramColorHex extends HistogramColor {
+public class HistogramColorHex_19177246_CollaoCallpa extends HistogramColor_19177246_CollaoCallpa {
     String hex;
-    public HistogramColorHex (String hex, int times){
+    public HistogramColorHex_19177246_CollaoCallpa (String hex, int times){
         super(times);
         this.hex = hex;
     }

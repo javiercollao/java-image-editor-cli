@@ -8,12 +8,12 @@ package model;
  *
  * @author Javier Collao
  */
-public abstract class Pixel {
+public abstract class Pixel_19177246_CollaoCallpa {
     int posX;
     int posY;
     int depth;
     
-    public Pixel (int x, int y, int z) {
+    public Pixel_19177246_CollaoCallpa (int x, int y, int z) {
 		this.posX = x;
 		this.posY = y;
                 this.depth = z;

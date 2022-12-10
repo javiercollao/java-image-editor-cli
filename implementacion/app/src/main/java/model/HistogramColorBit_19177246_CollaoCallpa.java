@@ -8,9 +8,9 @@ package model;
  *
  * @author Javier Collao
  */
-public class HistogramColorBit extends HistogramColor{
+public class HistogramColorBit_19177246_CollaoCallpa extends HistogramColor_19177246_CollaoCallpa{
      int bit;
-     public HistogramColorBit (int bit, int times) {
+     public HistogramColorBit_19177246_CollaoCallpa (int bit, int times) {
         super(times);
         this.bit = bit;
     }

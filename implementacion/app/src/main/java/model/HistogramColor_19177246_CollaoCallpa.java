@@ -8,9 +8,9 @@ package model;
  *
  * @author Javier Collao
  */
-public abstract class HistogramColor {
+public abstract class HistogramColor_19177246_CollaoCallpa {
     int times;
-    public HistogramColor (int times) {
+    public HistogramColor_19177246_CollaoCallpa (int times) {
         this.times = times;
     }
 

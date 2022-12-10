@@ -11,43 +11,44 @@ import java.util.List;
  *
  * @author Javier Collao
  */
-public class CompressedImageBit extends CompressedImage{
-    int bit;
-    public CompressedImageBit (Image img, List<Integer> depths, int bit) {
+public class CompressedImageRgb_19177246_CollaoCallpa extends CompressedImage_19177246_CollaoCallpa{
+    List<Integer> rgb;
+    public CompressedImageRgb_19177246_CollaoCallpa (Image_19177246_CollaoCallpa img, List<Integer> depths,  List<Integer> rgb) {
         super(img, depths);
-        this.bit = bit;
-    }
-    
-    @Override
-    public String toString() {
-        return "\n[Imagen: "+ this.img.toString() +
-                "  , Frequent Color: "+ this.bit+
-                "]\n";
+        this.rgb = rgb;
     }
 
     @Override
-    public Image decompress() {
-       
-       List<Pixel> mylist = this.regenerarPixeles();
+    public String toString() {
+        return "[Imagen: "+ this.img.toString() +
+                "  , Frequent Color: "+ this.rgb+
+                "]";
+    }
+
+    @Override
+    public Image_19177246_CollaoCallpa decompress() {
+       List<Pixel_19177246_CollaoCallpa> mylist = this.regenerarPixeles();
        for (int k = 0; k < this.img.getPixels().size() ; k++){
            mylist.add(this.img.getPixels().get(k));
        }
-       Image imagen = new Image(this.img.getWidth(),this.img.getHeight(), mylist);
-       return imagen;
+       Image_19177246_CollaoCallpa imagen = new Image_19177246_CollaoCallpa(this.img.getWidth(),this.img.getHeight(), mylist);
+       return imagen;    
     }
     
-    public List<Pixel> regenerarPixeles(){
-        List<Pixel> mylist = this.filtrarPixeles();
+    public List<Pixel_19177246_CollaoCallpa> regenerarPixeles(){
+        List<Pixel_19177246_CollaoCallpa> mylist = this.filtrarPixeles();
         for (int k = 0; k < this.filtrarPixeles().size() ; k++){
             mylist.get(k).setDepth(this.depths.get(k));
-            ((Pixbit) mylist.get(k)).setBit(this.bit);
+            ((Pixrgb_19177246_CollaoCallpa) mylist.get(k)).setR(this.rgb.get(0));
+            ((Pixrgb_19177246_CollaoCallpa) mylist.get(k)).setG(this.rgb.get(1));
+            ((Pixrgb_19177246_CollaoCallpa) mylist.get(k)).setB(this.rgb.get(2));
         }
         return mylist;
     }
     
     
-    public List<Pixel> filtrarPixeles(){
-        List<Pixel> newpixels = new ArrayList<>();
+    public List<Pixel_19177246_CollaoCallpa> filtrarPixeles(){
+        List<Pixel_19177246_CollaoCallpa> newpixels = new ArrayList<>();
         List<Boolean> newpixelsBool = new ArrayList<>();
         for (int k = 0; k < this.coordenadas().size() ; k++){
             newpixelsBool.add(false);
@@ -68,21 +69,19 @@ public class CompressedImageBit extends CompressedImage{
     }
     
     
-    public List<Pixel> coordenadas() {
-        List<Pixel> pixelsGenerados = new ArrayList<>();
+    public List<Pixel_19177246_CollaoCallpa> coordenadas() {
+        List<Pixel_19177246_CollaoCallpa> pixelsGenerados = new ArrayList<>();
         for(int i=0; i < this.img.getWidth(); i++){
             for(int j = 0; j < this.img.getHeight(); j++ ){
-                Pixel p = new Pixbit(i,j,0,0);
+                Pixel_19177246_CollaoCallpa p = new Pixrgb_19177246_CollaoCallpa(i,j,0,0,0,0);
                 pixelsGenerados.add(p);
             }
         }
         return pixelsGenerados;
     }
-
+    
     @Override
     public Boolean isCompressed() {
         return true;
     }
- 
- 
 }

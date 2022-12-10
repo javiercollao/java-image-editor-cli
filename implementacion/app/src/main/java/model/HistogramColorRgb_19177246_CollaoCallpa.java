@@ -10,10 +10,10 @@ import java.util.List;
  *
  * @author Javier Collao
  */
-public class HistogramColorRgb extends HistogramColor {
+public class HistogramColorRgb_19177246_CollaoCallpa extends HistogramColor_19177246_CollaoCallpa {
     List<Integer> rgb;
     
-    public HistogramColorRgb (List<Integer> rgb, int times){
+    public HistogramColorRgb_19177246_CollaoCallpa (List<Integer> rgb, int times){
         super(times);
         this.rgb = rgb;
     }

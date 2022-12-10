@@ -47,6 +47,7 @@ public class Image implements IImage {
         this.pixels = pixels;
     }
     
+    /* Descripción: función que permite determinar si la imagen corresponde a un bitmap-d.*/
     @Override
     public boolean isBitmap() {
         boolean result;
@@ -64,7 +65,7 @@ public class Image implements IImage {
         
         return result;
     }
-
+    /*   */
     @Override
     public boolean isPixmap() {
         boolean result;
@@ -83,6 +84,7 @@ public class Image implements IImage {
         return result;
     }
 
+    /*   */
     @Override
     public boolean isHexmap() {
         boolean result;
@@ -101,11 +103,13 @@ public class Image implements IImage {
         return result;
     }
 
+    /*   */
     @Override
     public boolean isCompressed() {
         return false;
     }
 
+    /* Descripción: función que permite invertir una imágen horizontalmente.  */
     @Override
     public void flipH() {
         int width = this.getWidth()-1;
@@ -120,6 +124,7 @@ public class Image implements IImage {
         }); 
     }
 
+    /*  Descripción: función que permite invertir una imágen verticalmente.  */
     @Override
     public void flipV() {
         int height = this.getHeight()-1;
@@ -134,6 +139,7 @@ public class Image implements IImage {
         }); 
     }
 
+    /*  Descripción: Recortar una imágen a partir de un cuadrante.  */
     @Override
     public void crop(int x1, int y1, int x2, int y2) {
         List<Pixel> lista = new ArrayList<>();
@@ -150,6 +156,7 @@ public class Image implements IImage {
         this.setHeight(this.height-((this.height-1)-y2));
     }
 
+    /* Descripción: Transforma una imagen desde una representación RGB a una representación HEX.  */
     @Override
     public void imgRGBToHex() {
         List<Pixel> lista = new ArrayList<>();
@@ -164,6 +171,7 @@ public class Image implements IImage {
         }
     }
 
+    /*  Descripción: Retorna un histograma de frecuencias a partir de los colores en cada una de las imágenes. Debe funcionar para bitmap-d, pixmap-d y hexmap-d. */
     @Override
     public Histogram histogram() { 
         List<HistogramColor> listaFrencuenciaColores = null;
@@ -283,6 +291,7 @@ public class Image implements IImage {
         return histo;
     }
 
+    /*  Descripción: rota la imágen 90° a la derecha.  */
     @Override
     public void rotate90() { 
         this.pixels.forEach(pixel -> {
@@ -294,6 +303,7 @@ public class Image implements IImage {
         this.flipH();
     }
 
+    /*  Descripción: Comprime una imágen eliminando aquellos pixeles con el color más frecuente. La imagen comprimida resultante solo se puede manipular con las otras funciones una vez que haya sido descomprimida a partir de la función señalada más adelante */
     @Override
     public CompressedImage compress() { 
         List<Integer> listaDepths = new ArrayList<>();
@@ -321,6 +331,7 @@ public class Image implements IImage {
         }
     }
     
+    /*  Funcion que recupera el color Bit mas repetido */
     public Integer mostRepeatedColorBit(){
         List<Integer> listaFrecuencia = new ArrayList<Integer>();
         this.histogram().getHisto().forEach(colorHisto -> {
@@ -335,6 +346,7 @@ public class Image implements IImage {
         return colorBit.getBit();
     }
     
+    /*  Funcion que recupera el color RGB mas repetido */
     public List<Integer> mostRepeatedColorRgb(){
         List<Integer> listaFrecuencia = new ArrayList<Integer>();
         this.histogram().getHisto().forEach(colorHisto -> {
@@ -349,7 +361,8 @@ public class Image implements IImage {
         return colorRgb.getRgb();
     }
     
-      public String mostRepeatedColorHex(){
+    /*  Funcion que recupera el color Hex mas repetido */
+    public String mostRepeatedColorHex(){
         List<Integer> listaFrecuencia = new ArrayList<Integer>();
         this.histogram().getHisto().forEach(colorHisto -> {
             listaFrecuencia.add(colorHisto.getTimes());
@@ -362,8 +375,6 @@ public class Image implements IImage {
         
         return colorHex.getHex();
     }
-    
- 
     
     public List<Pixel> mostFrecuencyColorBitList(){
         List<Pixel> lista;
@@ -388,8 +399,7 @@ public class Image implements IImage {
         return lista;
         
     }
-    
-    
+ 
     public List<Pixel> mostFrecuencyColorRgbList(){
         List<Pixel> lista;
         
@@ -402,8 +412,7 @@ public class Image implements IImage {
          
     }
     
-    
-     public List<Pixel> mostFrecuencyColorRgbNegativeList(){
+    public List<Pixel> mostFrecuencyColorRgbNegativeList(){
         List<Pixel> lista;
         
         List<Integer> colorMax = this.mostRepeatedColorRgb();
@@ -414,9 +423,6 @@ public class Image implements IImage {
         return lista;
         
     }
-     
-     
-     
      
     public List<Pixel> mostFrecuencyColorHexList(){
         List<Pixel> lista;
@@ -430,8 +436,7 @@ public class Image implements IImage {
          
     }
     
-    
-     public List<Pixel> mostFrecuencyColorHexNegativeList(){
+    public List<Pixel> mostFrecuencyColorHexNegativeList(){
         List<Pixel> lista;
         
         String colorMax = this.mostRepeatedColorHex();
@@ -444,14 +449,15 @@ public class Image implements IImage {
     }
     
 
-
+    /*  Descripción: Función que permite obtener el valor del bit opuesto. */
     @Override
     public void invertColorBit() {
         this.pixels.forEach(pixel -> { 
             pixel.invertColor();
         }); 
     }
-
+    
+    /*  Descripción: Función que permite obtener el valor del color RGB opuesto. */
     @Override
     public void invertColorRGB() {
         this.pixels.forEach(pixel -> { 
@@ -459,6 +465,7 @@ public class Image implements IImage {
         }); 
     }
 
+    /* Descripción: Permite modificar un pixel de la lista pixeles de la imagen  */
     @Override
     public void changePixel(Pixel p) {
         List<Pixel> lista = new ArrayList<>();
@@ -472,6 +479,7 @@ public class Image implements IImage {
         this.setPixels(lista);   
     }
 
+    /* Descripción: Función que transforma una imagen a una representación string  */
     @Override
     public String toString() { 
         List<String> lista = new ArrayList<>();
@@ -488,12 +496,11 @@ public class Image implements IImage {
         return concatString;
     }
     
-
+    /* Descripción: Función que permite separar una imágen en capas en base a la profundidad en que se sitúan los pixeles. El resultado consiste en una lista de imágenes donde cada una agrupa los píxeles que se sitúan en el mismo nivel de profundidad. Además, en las imágenes resultantes se sustituyen los píxeles que se encuentran en otro nivel de profundidad por píxeles blancos (255,255,255).  */
     @Override
     public void depthLayers() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
- 
-    
+
 }

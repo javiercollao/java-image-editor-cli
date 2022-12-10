@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author delacoll
+ * @author Javier Collao
  */
 public class Histogram {
     public List<HistogramColor> histo;
@@ -32,10 +32,11 @@ public class Histogram {
         StringBuilder sb;
         sb = new StringBuilder();
 
+        lista.add("\nHistogram:");
         this.histo.forEach(histogramColor -> {
            lista.add(histogramColor.toString());
         });
-        
+        lista.add("\n");
         lista.forEach(sb::append);
         String concatString = sb.toString();
         

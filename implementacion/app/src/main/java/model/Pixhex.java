@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author delacoll
+ * @author Javier Collao
  */
 public class Pixhex extends Pixel{
     String hex;
@@ -49,12 +49,12 @@ public class Pixhex extends Pixel{
     
     @Override
     public String toString() {
-        return "Hex { "+
+        return "["+
                "x = "+ this.getPosX() +
                ", y = "+ this.getPosY() +
                ", hex = "+ this.getHex() +
                ", depth = "+ this.getDepth() +
-               " }";
+               "]\n";
     }
 
     @Override

@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  *
- * @author delacoll
+ * @author Javier Collao
  */
 public class HistogramColorRgb extends HistogramColor {
     List<Integer> rgb;

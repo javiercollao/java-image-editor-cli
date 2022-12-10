@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author delacoll
+ * @author Javier Collao
  */
 public class HistogramColorBit extends HistogramColor{
      int bit;

@@ -116,14 +116,14 @@ public class Pixrgb extends Pixel{
     
     @Override
     public String toString() {
-        return "RGB { "+
+        return "["+
                "x = "+ this.getPosX() +
                ", y = "+ this.getPosY() +
                ", R = "+ this.getR() +
                ", G = "+ this.getG() +
                ", B = "+ this.getB() +
                ", depth = "+ this.getDepth() +
-               " }";
+               "]\n";
     }
 
      

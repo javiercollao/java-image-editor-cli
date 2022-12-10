@@ -6,7 +6,7 @@ package view;
 
 /**
  *
- * @author delacoll
+ * @author Javier Collao
  */
 public interface IMenu {
      public void iniciar();

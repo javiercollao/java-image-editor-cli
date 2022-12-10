@@ -51,13 +51,18 @@ public class Pixbit extends Pixel{
 
     @Override
     public String toString() {
-        return "Bit { "+
+        return "["+
                "x = "+ this.getPosX() +
                ", y = "+ this.getPosY() +
                ", bit = "+ this.getBit() +
                ", depth = "+ this.getDepth() +
-               " }";
+               "]\n";
     }
+    
+    // @Override
+    //public String toString() {
+    //    return ""+this.getBit();
+   // }
 
     @Override
     String rgbToHex() {

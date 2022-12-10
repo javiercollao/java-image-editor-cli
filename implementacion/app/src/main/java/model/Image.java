@@ -486,10 +486,12 @@ public class Image implements IImage {
         StringBuilder sb;
         sb = new StringBuilder();
 
+        lista.add("\nAncho:"+this.width+", alto: "+this.height+"\n");
         this.pixels.forEach(pixel -> {
            lista.add(pixel.toString());
         });
         
+        lista.add(this.histogram().toString());
         lista.forEach(sb::append);
         String concatString = sb.toString();
         

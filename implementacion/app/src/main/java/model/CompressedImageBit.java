@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author delacoll
+ * @author Javier Collao
  */
 public class CompressedImageBit extends CompressedImage{
     int bit;
@@ -20,9 +20,9 @@ public class CompressedImageBit extends CompressedImage{
     
     @Override
     public String toString() {
-        return "[Imagen: "+ this.img.toString() +
+        return "\n[Imagen: "+ this.img.toString() +
                 "  , Frequent Color: "+ this.bit+
-                "]";
+                "]\n";
     }
 
     @Override
@@ -55,7 +55,7 @@ public class CompressedImageBit extends CompressedImage{
         for (int i = 0; i < this.img.getPixels().size(); i++){
             for (int j = 0; j < this.coordenadas().size() ; j++){
                 if (this.img.getPixels().get(i).getPosX() == this.coordenadas().get(j).getPosX() && this.img.getPixels().get(i).getPosY() == this.coordenadas().get(j).getPosY() && newpixelsBool.get(j).equals(false)){
-                    newpixelsBool.add(j, Boolean.TRUE);
+                    newpixelsBool.set(j, Boolean.TRUE);
                 }
             }
         }

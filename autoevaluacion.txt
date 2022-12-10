@@ -42,5 +42,5 @@ invertColorRGB             1
 toString                   1
 depthLayers                0
 decompress                 1
-Menu terminal              0
+Menu terminal              1
 * Ui                       0

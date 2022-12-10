@@ -26,6 +26,5 @@ public interface IImage {
     public void invertColorRGB();
     public void changePixel(Pixel p);
     public String toString();
-    public void depthLayers();
-    public void decompress();
+    public void depthLayers(); 
 }

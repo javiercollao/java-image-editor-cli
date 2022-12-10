@@ -95,10 +95,9 @@ public class App {
         // System.out.print(imagen1.toString());
         
         // compress
-        CompressedImage cimg1 = imagen1.compress();
-        Image im = ((CompressedImageBit) cimg1).decompress();
-        System.out.print(im.toString());
+        // CompressedImage cimg1 = imagen1.compress();
         // System.out.print(cimg1.toString());
+        
         
         // CompressedImage cimg2 = imagen2.compress();
         // System.out.print(cimg2.toString());
@@ -129,6 +128,20 @@ public class App {
         
         
         // decompress
+        //CompressedImage cimg1 = imagen1.compress();
+        //Image im1 = ((CompressedImageBit) cimg1).decompress();
+        //System.out.print(im1.toString());
+        
+        
+        //CompressedImage cimg2 = imagen2.compress();
+        //Image im2 = ((CompressedImageRgb) cimg2).decompress();
+        //System.out.print(im2.toString());
+        
+        
+        //CompressedImage cimg3 = imagen3.compress();
+        //Image im3 = ((CompressedImageHex) cimg3).decompress();
+        //System.out.print(im3.toString());
+        
         
         
        

@@ -50,28 +50,63 @@ A partir del enenunciado se concluye que el programa contiene las siguientes cla
 
 ### Documentación
 
-Podemos generar tres tipos de imágenes con el comando image, de tipo bit, rgb y hexadecimal respectivamente.
+Debemos verificar si tenemos JDK instalado en su versión 17 o superior y la carpeta “implementacion” del proyecto con sus archivos y carpetas correspondientes, estos son “./app”, y “./gradle”, en cuanto a los archivos principales deben estar “gradlew.bat”, “gradlew” y “settings.gradle”.
+
+Para ejecutar el proyecto debemos ubicarnos en el directorio principal “./implementacion” en la terminal, para luego ejecutar los siguientes comandos:
 
 ```
- 
-```
-Para cada imagen podemos utilizar diferentes funciones como imageFlipH, imageFlipV, imageCrop, imageToHistogram, imageCompress, imageDecompress, entre otras.
-
-```
- 
+./gradlew clean build
+./gradlew run
 ```
 
-```
- 
-```
+En el menu tenemos lo siguiente
 
 ```
+### Manipulador de imágenes ###
+Escoja su opción: 
+1. Nueva imagen
+2. Modificar y visualizar una imagen
+3. Salir
  
 ```
+Si queremos crear una nueva imagen, introducimos la primera opción y podremos generarla. La imagen puede ser de tipo Bitmap, Pixmap ó Hexmap, cuando la hayamos creado quedara guardada en una memoria temporal.
+
+En la segunda opción "Modificar y visualizar una imagen", podemos manipular la imagen creada, o utilizar los ejemplos cargados. 
 
 ```
- 
+### Manipulador de imágenes ###
+Escoja su opción: 
+1. Ejemplo imagen tipo bitmap
+2. Ejemplo imagen tipo pixmap
+3. Ejemplo imagen tipo hexmap
+4. Imagen creada
+5. Volver
 ```
+Si creamos una imagen y luego en la opción de modificar ingresamos a alguno de los ejemplos, la imagen creada se perderá, debido a que la memoria es temporal.
+
+```
+ ### Manipulador de imágenes ###
+
+Ancho:2, alto: 2
+[x = 0, y = 0, bit = 1, depth = 4]
+[x = 0, y = 1, bit = 0, depth = 4]
+[x = 1, y = 0, bit = 1, depth = 3]
+[x = 1, y = 1, bit = 1, depth = 42]
+
+Histogram:[Color: 0  , Times: 1][Color: 1  , Times: 3]
+
+Escoja su opción: 
+1. Hacer FlipH
+2. Hacer FlipV
+3. Hacer Rotate90 hacia la derecha
+4. Hacer ChangePixel
+5. Hacer Crop
+6. Invertir Bits
+7. Comprimir imagen
+8. Descomprimir imagen
+9. Volver
+```
+Podemos modificar nuestra imagen con muchas opciones dependiendo del tipo de imagen.
 
 ### Software
 

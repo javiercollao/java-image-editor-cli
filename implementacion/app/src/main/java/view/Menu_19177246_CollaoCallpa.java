@@ -189,7 +189,7 @@ public class Menu_19177246_CollaoCallpa implements IMenu_19177246_CollaoCallpa{
         System.out.println(imagen.toString());
         
         System.out.println("\n\nIngresar cualquier valor para volver: ");
-        input.next();
+        this.input.next();
         
     }
 
@@ -228,7 +228,7 @@ public class Menu_19177246_CollaoCallpa implements IMenu_19177246_CollaoCallpa{
         System.out.println(imagen.toString());
         
         System.out.println("\n\nIngresar cualquier valor para volver: ");
-        input.next();
+        this.input.next();
     }
 
     @Override
@@ -261,7 +261,7 @@ public class Menu_19177246_CollaoCallpa implements IMenu_19177246_CollaoCallpa{
         System.out.println(imagen.toString());
         
         System.out.println("\n\nIngresar cualquier valor para volver: ");
-        input.next();
+        this.input.nextLine();
     }
 
     
